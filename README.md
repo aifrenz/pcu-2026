@@ -2,9 +2,9 @@
 배재대학교 AI 교육
 
 ## Google Workspace Labs
-https://workspace.google.com/labs-sign-up/
+[Workspace Experiments](https://workspace.google.com/experiments/)
 
-Google Workspace Labs는 Google이 제공하는 실험적 기능(Test Features)들을 미리 사용해볼 수 있는 프로그램으로, 
+Google Workspace Experiments는 Google이 제공하는 실험적 기능(Test Features)들을 미리 사용해볼 수 있는 프로그램으로, 
 특히 Google Docs, Gmail, Sheets, Slides 등의 Google Workspace 앱에 
 생성형 AI 기능을 통합해 사용자 생산성을 향상시키는 것을 목표로 합니다.
 
