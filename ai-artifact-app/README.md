@@ -15,11 +15,15 @@
 |---|---|
 | Windows PC | Node.js / npm 설치 완료 (강사가 미리 확인) |
 | 스마트폰 | **Expo Go** 앱 설치 (Android: Play 스토어 / iPhone: App Store) |
-| Wi-Fi | PC와 스마트폰이 **같은 Wi-Fi**에 연결되어 있어야 함 |
+| 네트워크 | PC와 스마트폰 모두 인터넷 연결 (같은 Wi-Fi 권장, 안 되면 터널 모드 — 3장 참고) |
 | Expo 계정 | APK 빌드 단계(6장 이후)에서만 필요 — [expo.dev](https://expo.dev) 무료 가입 |
 
 > 💡 **명령어를 입력하는 곳**: VSCode 화면 아래쪽의 **터미널(PowerShell)** 입니다.
 > 메뉴 `Terminal → New Terminal` 로 열 수 있습니다.
+
+> ⚠️ **Expo Go 버전 주의**: 이 프로젝트는 **Expo SDK 54** 기반입니다.
+> 폰의 Expo Go 앱이 SDK 54를 지원해야 하며, "incompatible with this version of Expo Go"
+> 오류가 나면 스토어에서 Expo Go를 최신 버전으로 업데이트하세요. (10장 참고)
 
 ---
 
@@ -87,11 +91,24 @@ QR 코드를 스캔해 앱을 엽니다.
 
 테스트를 끝내려면 터미널에서 **`Ctrl + C`** 를 누릅니다 (개발 서버 종료).
 
-> **연결이 안 될 때**: 같은 Wi-Fi인데도 폰에서 앱이 안 열리면 아래 명령으로 다시 시도하세요.
-> ```powershell
-> npx expo start --tunnel
-> ```
-> (속도는 조금 느리지만 네트워크 제약을 우회합니다.)
+### 연결이 안 될 때 — 터널 모드 (`--tunnel`)
+
+QR을 스캔해도 폰에서 앱이 안 열리고 로딩에서 멈춘다면, 네트워크 문제입니다.
+**연구소·회사 Wi-Fi는 같은 네트워크라도 기기 간 통신을 차단**하는 경우가 많아 터널 모드가 필요합니다.
+
+```powershell
+npx expo start --tunnel
+```
+
+- 터널 모드는 Expo 중계 서버를 거치므로, **PC와 폰이 다른 네트워크여도** 동작합니다 (폰이 LTE/5G여도 OK).
+- 처음 실행하면 `@expo/ngrok` 패키지 설치 여부를 물어봅니다 → **`y` 입력**.
+- 만약 `CommandError: Install @expo/ngrok and try again` 오류가 나면, 아래 명령으로
+  프로젝트에 직접 설치한 뒤 다시 시도하세요.
+  ```powershell
+  npm install @expo/ngrok
+  npx expo start --tunnel
+  ```
+- 터널은 중계를 거쳐 LAN 모드보다 **로딩이 느립니다** — 멈춘 것으로 오해하지 마세요.
 
 ### (선택) 폰 없이 PC 브라우저로 빠르게 확인
 
@@ -192,9 +209,11 @@ eas build --platform android --profile preview
 |---|---|---|
 | `Unable to resolve "react-native-webview"` | 2장 `npm install`을 안 함 | `npm install` 실행 후 다시 시도 |
 | `'npx'은(는) ... 인식할 수 없습니다` | Node.js 미설치 | Node.js 설치 후 터미널 재시작 |
+| `project is incompatible with this version of Expo Go` | 폰 Expo Go의 SDK 버전 불일치 | 스토어에서 Expo Go 최신 버전으로 업데이트 (이 프로젝트는 SDK 54) |
+| `CommandError: Install @expo/ngrok and try again` | 터널용 패키지를 못 찾음 | `npm install @expo/ngrok` 로 프로젝트에 설치 후 재시도 |
 | 흰 화면만 보임 | URL이 비공개/차단됨 | 시크릿 모드로 URL 확인, Artifact를 공개 공유로 설정 |
 | "웹앱을 불러오지 못했습니다" | 인터넷 끊김 / URL 오타 | 네트워크 확인, App.tsx의 `ARTIFACT_URL` 점검 |
-| QR 스캔해도 폰에서 안 열림 | PC·폰이 다른 네트워크 | 같은 Wi-Fi 연결, 안 되면 `npx expo start --tunnel` |
+| QR 스캔해도 폰에서 안 열림 / 로딩에서 멈춤 | PC·폰 네트워크 차단 (연구소·회사망 흔함) | `npx expo start --tunnel` 사용 (3장 참고) |
 | `eas: command not found` | EAS CLI 미설치 | `npm install -g eas-cli` 실행 |
 | 빌드가 `.aab`만 생성됨 | eas.json 설정 누락 | `"buildType": "apk"` 설정 확인 |
 | APK "앱이 설치되지 않음" | 알 수 없는 앱 설치 차단 | Android 설정에서 설치 권한 허용 |
