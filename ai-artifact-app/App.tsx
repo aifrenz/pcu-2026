@@ -8,10 +8,12 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { WebView } from 'react-native-webview';
 
-// [요구사항 12] 로드할 웹앱 주소를 상수로 분리
-// 다른 웹앱으로 바꾸려면 이 값만 수정하면 됩니다.
-const ARTIFACT_URL =
-  'https://claude.ai/public/artifacts/13f22a87-15af-4319-bfea-4661ef3dd00a';
+// 웹 서비스 주소는 service-url.json 파일에 분리되어 있습니다.
+// 주소를 바꿀 때는 이 코드가 아니라 service-url.json 의 "url" 값만 수정하세요.
+import serviceConfig from './service-url.json';
+
+// service-url.json 에서 읽어온 웹 서비스 주소
+const ARTIFACT_URL = serviceConfig.url;
 
 export default function App() {
   // 로딩 중 여부 (true면 로딩 메시지 표시)

@@ -16,14 +16,14 @@
 | Windows PC | Node.js / npm 설치 완료 (강사가 미리 확인) |
 | 스마트폰 | **Expo Go** 앱 설치 (Android: Play 스토어 / iPhone: App Store) |
 | 네트워크 | PC와 스마트폰 모두 인터넷 연결 (같은 Wi-Fi 권장, 안 되면 터널 모드 — 3장 참고) |
-| Expo 계정 | APK 빌드 단계(6장 이후)에서만 필요 — [expo.dev](https://expo.dev) 무료 가입 |
+| Expo 계정 | APK 빌드 단계(7장 이후)에서만 필요 — [expo.dev](https://expo.dev) 무료 가입 |
 
 > 💡 **명령어를 입력하는 곳**: VSCode 화면 아래쪽의 **터미널(PowerShell)** 입니다.
 > 메뉴 `Terminal → New Terminal` 로 열 수 있습니다.
 
 > ⚠️ **Expo Go 버전 주의**: 이 프로젝트는 **Expo SDK 54** 기반입니다.
 > 폰의 Expo Go 앱이 SDK 54를 지원해야 하며, "incompatible with this version of Expo Go"
-> 오류가 나면 스토어에서 Expo Go를 최신 버전으로 업데이트하세요. (10장 참고)
+> 오류가 나면 스토어에서 Expo Go를 최신 버전으로 업데이트하세요. (11장 참고)
 
 ---
 
@@ -120,7 +120,41 @@ npx expo start --web
 
 ---
 
-## 4. 실행 화면 점검 체크리스트
+## 4. 웹 서비스 주소 바꾸기 (`service-url.json`)
+
+이 앱이 보여주는 웹 서비스 주소는 코드(`App.tsx`)가 아니라 **별도 파일** [service-url.json](service-url.json) 에 분리되어 있습니다.
+다른 웹 서비스로 바꾸고 싶으면 **이 파일 하나만** 수정하면 됩니다. 코드는 건드릴 필요가 없습니다.
+
+`service-url.json` 파일 내용:
+
+```json
+{
+  "_comment": "앱이 보여줄 웹 서비스 주소입니다. 아래 url 값(따옴표 안)만 바꾸세요.",
+  "url": "https://claude.ai/public/artifacts/13f22a87-15af-4319-bfea-4661ef3dd00a"
+}
+```
+
+**바꾸는 방법**
+
+1. VSCode에서 `service-url.json` 파일을 엽니다.
+2. `"url"` 값의 **큰따옴표 안 주소만** 원하는 주소로 바꿉니다.
+3. 파일을 저장합니다 (`Ctrl + S`).
+4. 앱에 반영하기:
+   - 개발 서버가 꺼져 있으면 → `npx expo start` 다시 실행
+   - 이미 실행 중이면 → 터미널에서 **`r` 키**를 눌러 새로고침
+
+**주의사항 (JSON 문법)**
+
+- 큰따옴표 `"`, 중괄호 `{ }`, 콜론 `:`, 쉼표 `,` 같은 기호는 **그대로 두어야** 합니다.
+- 주소는 반드시 큰따옴표 `" "` 안에 넣습니다.
+- `"_comment"` 줄은 설명용이니 건드리지 마세요. (없어도 동작은 합니다)
+
+> 💡 동작 원리: `App.tsx` 가 이 파일을 `import serviceConfig from './service-url.json'` 으로
+> 읽어서 `ARTIFACT_URL` 에 넣습니다. 그래서 주소를 바꿔도 코드 수정이 필요 없습니다.
+
+---
+
+## 5. 실행 화면 점검 체크리스트
 
 앱이 떴다면 아래 항목을 직접 확인해 보세요.
 
@@ -129,10 +163,11 @@ npx expo start --web
 - [ ] 화면 위쪽(시계·배터리 영역)에 내용이 가려지지 않는가
 - [ ] 웹앱 안의 버튼·입력 등이 정상 동작하는가
 - [ ] 인터넷을 끄면 오류 메시지가 뜨는가 (의도된 동작)
+- [ ] `service-url.json` 의 주소를 바꿔 보고, 다른 웹 화면이 뜨는가
 
 ---
 
-## 5. (참고) 이 프로젝트는 이렇게 만들어졌습니다
+## 6. (참고) 이 프로젝트는 이렇게 만들어졌습니다
 
 이미 완성된 폴더를 받았다면 이 장은 읽기만 해도 됩니다. 직접 처음부터 만들고 싶을 때 참고하세요.
 
@@ -145,12 +180,18 @@ cd ai-artifact-app
 npx expo install react-native-webview react-native-safe-area-context
 ```
 
-- 화면 코드: [App.tsx](App.tsx) — 보여줄 웹 주소는 맨 위 `ARTIFACT_URL` 상수에 있습니다.
-- 앱 이름 설정: [app.json](app.json) 의 `"name"`, `"android.package"`
+프로젝트의 주요 파일:
+
+| 파일 | 역할 |
+|---|---|
+| [service-url.json](service-url.json) | **보여줄 웹 서비스 주소** (수강생이 바꾸는 파일) |
+| [App.tsx](App.tsx) | 화면 코드 — WebView로 주소를 불러와 표시 |
+| [app.json](app.json) | 앱 이름(`"name"`), 안드로이드 패키지명(`"android.package"`) |
+| [eas.json](eas.json) | APK 빌드 설정 |
 
 ---
 
-## 6. APK 만들기 — EAS CLI 설치 및 로그인
+## 7. APK 만들기 — EAS CLI 설치 및 로그인
 
 여기서부터는 폰에 직접 설치할 수 있는 **APK 파일**을 만드는 단계입니다.
 APK는 Expo 클라우드 빌드 서비스(EAS)로 만듭니다. **PC에 Android 개발 도구를 설치할 필요가 없습니다.**
@@ -168,7 +209,7 @@ eas login
 
 ---
 
-## 7. eas.json — 빌드 설정 파일
+## 8. eas.json — 빌드 설정 파일
 
 이 프로젝트에는 [eas.json](eas.json) 이 **이미 포함**되어 있어 따로 만들 필요가 없습니다.
 
@@ -178,7 +219,7 @@ eas login
 
 ---
 
-## 8. APK 빌드 명령어
+## 9. APK 빌드 명령어
 
 ```powershell
 eas build --platform android --profile preview
@@ -192,7 +233,7 @@ eas build --platform android --profile preview
 
 ---
 
-## 9. APK 설치 시 주의사항
+## 10. APK 설치 시 주의사항
 
 1. **알 수 없는 앱 설치 허용**: Play 스토어를 거치지 않으므로, Android 설정 →
    앱 → 특수 권한 → "알 수 없는 앱 설치"를 허용해야 설치됩니다.
@@ -203,7 +244,7 @@ eas build --platform android --profile preview
 
 ---
 
-## 10. 자주 발생하는 오류와 해결 방법
+## 11. 자주 발생하는 오류와 해결 방법
 
 | 증상 | 원인 | 해결 |
 |---|---|---|
@@ -212,7 +253,8 @@ eas build --platform android --profile preview
 | `project is incompatible with this version of Expo Go` | 폰 Expo Go의 SDK 버전 불일치 | 스토어에서 Expo Go 최신 버전으로 업데이트 (이 프로젝트는 SDK 54) |
 | `CommandError: Install @expo/ngrok and try again` | 터널용 패키지를 못 찾음 | `npm install @expo/ngrok` 로 프로젝트에 설치 후 재시도 |
 | 흰 화면만 보임 | URL이 비공개/차단됨 | 시크릿 모드로 URL 확인, Artifact를 공개 공유로 설정 |
-| "웹앱을 불러오지 못했습니다" | 인터넷 끊김 / URL 오타 | 네트워크 확인, App.tsx의 `ARTIFACT_URL` 점검 |
+| "웹앱을 불러오지 못했습니다" | 인터넷 끊김 / 주소 오타 | 네트워크 확인, `service-url.json` 의 `url` 값 점검 |
+| 주소를 바꿨는데 `SyntaxError` / 빨간 줄 | JSON 문법 깨짐 (따옴표·쉼표 등) | `service-url.json` 의 `{ } " :` 기호가 그대로인지 확인 |
 | QR 스캔해도 폰에서 안 열림 / 로딩에서 멈춤 | PC·폰 네트워크 차단 (연구소·회사망 흔함) | `npx expo start --tunnel` 사용 (3장 참고) |
 | `eas: command not found` | EAS CLI 미설치 | `npm install -g eas-cli` 실행 |
 | 빌드가 `.aab`만 생성됨 | eas.json 설정 누락 | `"buildType": "apk"` 설정 확인 |
