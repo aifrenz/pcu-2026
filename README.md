@@ -80,6 +80,17 @@ VSCode에 AI 코딩 도구를 확장 프로그램으로 설치하면, 편집기 
 - **Claude** — [docs/vscode-claude.md](docs/vscode-claude.md)
 - **Codex (OpenAI)** — [docs/vscode-codex.md](docs/vscode-codex.md)
 - **Gemini (Google)** — [docs/vscode-gemini.md](docs/vscode-gemini.md)
+- **로컬 LLM (Ollama + Continue)** — [docs/vscode-ollama-continue.md](docs/vscode-ollama-continue.md) — 인터넷 없이 무료로 쓰는 로컬 모델 코드 어시스트
+
+---
+
+## Claude 업무 활용 (협업 · 자동화)
+
+Claude를 코드 작성을 넘어 **팀 협업과 업무 자동화**에 활용하는 방법입니다.
+claude.ai 웹과 Claude Desktop 앱을 함께 사용하며, MCP·스킬·플러그인 개념 설명과
+**폴더 파일 다루기 · 웹 크롤링 · 영수증 사진을 엑셀로 정리하기** 예제를 담았습니다.
+
+- **Claude Cowork 활용 가이드** — [docs/claude-cowork.md](docs/claude-cowork.md)
 
 ---
 
