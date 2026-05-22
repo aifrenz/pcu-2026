@@ -17,6 +17,61 @@ https://claude.ai/public/artifacts/22dc6903-eff9-4c49-a690-2b17d8020d95
 ### AAC 음성 퀴즈 게임 (발달 장애아이들용 교구 앱)
 https://claude.ai/public/artifacts/13f22a87-15af-4319-bfea-4661ef3dd00a
 
+## 개발 환경 준비 (VSCode · Node.js · Git)
+
+아래 **모바일 앱 실습**과 **데스크톱 앱 실습**을 진행하려면, 먼저 PC에 세 가지 도구를 설치해야 합니다.
+한 번만 설치하면 두 실습 모두에 사용됩니다.
+
+| 도구 | 역할 | 다운로드 |
+|---|---|---|
+| **Node.js** | 앱을 실행·빌드하는 기반 도구 (`npm` 포함) | <https://nodejs.org> → **LTS** 버전 |
+| **VSCode** | 코드를 보고 수정하는 편집기 (터미널 내장) | <https://code.visualstudio.com> |
+| **Git** | 실습 코드를 GitHub에서 내려받는 도구 | <https://git-scm.com/download/win> |
+
+### 설치 순서
+
+1. **Node.js 설치**
+   - [nodejs.org](https://nodejs.org) 에서 **LTS** 버튼을 눌러 설치 파일을 받습니다.
+   - 받은 파일을 실행하고, 모든 단계에서 **Next**(또는 동의)를 눌러 설치합니다.
+   - 패키지 설치 도구인 `npm` 이 함께 설치됩니다.
+
+2. **VSCode 설치**
+   - [code.visualstudio.com](https://code.visualstudio.com) 에서 Windows용 설치 파일을 받아 실행합니다.
+   - 설치 중 "추가 작업 선택" 화면에서 **"Code(으)로 열기" 메뉴 추가** 항목을 체크하면 편리합니다.
+
+3. **Git 설치**
+   - [git-scm.com](https://git-scm.com/download/win) 에서 Windows용 설치 파일을 받아 실행합니다.
+   - 선택 옵션이 많지만, **기본값 그대로 Next** 를 눌러 끝까지 설치하면 됩니다.
+
+### 설치 확인
+
+VSCode를 열고 메뉴 `Terminal → New Terminal` 로 터미널(PowerShell)을 연 뒤, 아래를 한 줄씩 입력합니다.
+
+```powershell
+node -v
+npm -v
+git --version
+```
+
+`v22.x.x`, `10.x.x`, `git version 2.x.x` 처럼 **버전 숫자**가 각각 나오면 설치 성공입니다.
+`인식할 수 없습니다` 오류가 나면, 해당 도구를 다시 설치하고 **VSCode를 완전히 닫았다가 다시 여세요.**
+
+### 실습 코드 내려받기
+
+설치가 끝나면 이 저장소를 PC로 복제(clone)합니다.
+
+```powershell
+git clone https://github.com/aifrenz/pcu-2026.git
+cd pcu-2026
+```
+
+그런 다음 VSCode 메뉴 `File → Open Folder` 로 `pcu-2026` 폴더를 열면 실습 준비가 끝납니다.
+
+> 💡 강사가 ZIP 파일이나 폴더로 코드를 직접 나눠 준 경우, 이 단계는 생략하고
+> 받은 폴더를 VSCode로 열면 됩니다.
+
+---
+
 ## 모바일 앱 실습 — AI Artifact App
 
 Claude Artifact로 만든 웹앱을 **Expo + React Native WebView**로 감싸,
