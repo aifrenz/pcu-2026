@@ -1,0 +1,31 @@
+{
+  "name": "ai-artifact-desktop",
+  "version": "1.0.0",
+  "description": "Claude Artifact 웹앱을 Electron 데스크톱 창으로 감싸는 실습 앱",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.example.aiartifactdesktop",
+    "productName": "AI Artifact Desktop",
+    "files": [
+      "main.js",
+      "service-url.json",
+      "renderer/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "private": true
+}

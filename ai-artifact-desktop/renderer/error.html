@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- 웹 서비스를 불러오지 못했을 때 보여주는 로컬 오류 화면입니다. -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>오류</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+      .error-text {
+        font-size: 16px;
+        color: #cc0000;
+        text-align: center;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="error-text">
+      웹앱을 불러오지 못했습니다.<br />
+      인터넷 연결 또는 공유 URL을 확인하세요.
+    </p>
+  </body>
+</html>

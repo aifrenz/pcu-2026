@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# electron-builder 빌드 결과물
+dist/
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
