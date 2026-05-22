@@ -72,6 +72,17 @@ cd pcu-2026
 
 ---
 
+## VSCode AI 코딩 도구 (확장 프로그램)
+
+VSCode에 AI 코딩 도구를 확장 프로그램으로 설치하면, 편집기 안에서 AI와 대화하며
+코드 작성·수정·설명을 맡길 수 있습니다. 도구별 설치·사용 가이드는 아래 문서를 참고하세요.
+
+- **Claude** — [docs/vscode-claude.md](docs/vscode-claude.md)
+- **Codex (OpenAI)** — [docs/vscode-codex.md](docs/vscode-codex.md)
+- **Gemini (Google)** — [docs/vscode-gemini.md](docs/vscode-gemini.md)
+
+---
+
 ## 모바일 앱 실습 — AI Artifact App
 
 Claude Artifact로 만든 웹앱을 **Expo + React Native WebView**로 감싸,
