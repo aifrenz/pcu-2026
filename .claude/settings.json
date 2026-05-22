@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git config *)",
+      "Bash(git push *)",
+      "Bash(Out-String)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\ymkang\\workspace\\pcu-2026\\.git"
     ]
   }
 }
