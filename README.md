@@ -130,3 +130,5 @@ Claude Artifact로 만든 웹앱을 **Expo + React Native WebView**로 감싸,
 - 프로젝트 폴더: [ai-artifact-desktop/](ai-artifact-desktop/)
 - **실습 가이드 (설치 · 실행 · 주소 변경 · .exe 빌드): [ai-artifact-desktop/README.md](ai-artifact-desktop/README.md)**
 
+https://github.com/electron/electron-quick-start-typescript
+
