@@ -5,7 +5,11 @@
       "Bash(git commit *)",
       "Bash(git config *)",
       "Bash(git push *)",
-      "Bash(Out-String)"
+      "Bash(Out-String)",
+      "Read(//c/Users/ymkang/AppData/Local/electron-builder/Cache/winCodeSign/**)",
+      "Read(//c/Users/ymkang/AppData/Local/electron-builder/Cache/winCodeSign/winCodeSign-2.6.0/**)",
+      "Bash(grep -E \"\\\\.exe$|win-unpacked\")",
+      "Bash(grep \"Setup 1.0.0.exe$\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\ymkang\\workspace\\pcu-2026\\.git"
