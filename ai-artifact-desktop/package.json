@@ -5,9 +5,11 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "predist": "node scripts/prepare-wincodesign.js",
     "dist": "electron-builder --win"
   },
   "devDependencies": {
+    "7zip-bin": "^5.2.0",
     "electron": "^33.2.0",
     "electron-builder": "^25.1.8"
   },

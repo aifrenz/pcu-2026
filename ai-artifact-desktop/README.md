@@ -146,7 +146,8 @@ cd ai-artifact-desktop
 npm init -y
 
 # (3) Electron + 빌드 도구 설치 (개발용 의존성)
-npm install --save-dev electron electron-builder
+#     7zip-bin: predist 스크립트가 빌드 도구 압축을 푸는 데 사용
+npm install --save-dev electron electron-builder 7zip-bin
 ```
 
 그 뒤 `package.json` 의 `"main"` 을 `main.js` 로 바꾸고,
@@ -160,6 +161,7 @@ npm install --save-dev electron electron-builder
 | [main.js](main.js) | Electron 메인 코드 — 창을 만들고 주소를 불러와 표시 |
 | [renderer/loading.html](renderer/loading.html) | 불러오는 동안 보여줄 로컬 로딩 화면 |
 | [renderer/error.html](renderer/error.html) | 불러오기 실패 시 보여줄 로컬 오류 화면 |
+| [scripts/prepare-wincodesign.js](scripts/prepare-wincodesign.js) | 빌드 전 자동 실행 — 빌드 도구 권한 문제를 미리 해결 (9장 참고) |
 | [package.json](package.json) | 앱 이름, 실행 스크립트, `electron-builder` 빌드 설정 |
 
 > 💡 모바일 실습의 `App.tsx`(WebView) ↔ 데스크톱 실습의 `main.js`(BrowserWindow) 가
@@ -207,13 +209,35 @@ npm install --save-dev electron electron-builder
 npm run dist
 ```
 
-- `package.json` 의 `"dist"` 에 적힌 `electron-builder --win` 명령이 실행됩니다.
-- 빌드는 **내 PC에서** 진행됩니다 (인터넷이 빠르면 처음 한 번만 Electron 빌드 도구를 내려받음, 약 **2~5분**).
+- `npm run dist` 는 두 단계를 자동으로 실행합니다.
+  1. **`predist`** (`scripts/prepare-wincodesign.js`) — 빌드 도구를 미리 준비 (아래 설명)
+  2. **`dist`** (`electron-builder --win`) — 실제 설치 파일 빌드
+- 빌드는 **내 PC에서** 진행됩니다 (인터넷이 빠르면 처음 한 번만 빌드 도구를 내려받음, 약 **2~5분**).
 - 완료되면 프로젝트 안에 **`dist` 폴더**가 생기고, 그 안에
   `AI Artifact Desktop Setup 1.0.0.exe` 같은 **설치 파일**이 들어 있습니다.
 - 그 `.exe` 파일을 실행하면 다른 PC에도 앱을 설치할 수 있습니다.
 
 > 💡 설치 없이 바로 실행되는 형태가 필요하면 `win.target` 을 `"portable"` 로 바꾸면 됩니다.
+
+### `predist` 스크립트 — `Cannot create symbolic link` 오류 자동 해결
+
+electron-builder는 빌드 시 코드 서명 도구(`winCodeSign`)를 내려받아 압축을 푸는데,
+그 안에는 macOS용 **심볼릭 링크** 파일이 있습니다. Windows에서 심볼릭 링크를 만들려면
+**관리자 권한 또는 개발자 모드**가 필요해, 권한이 없는 PC에서는 아래 오류로 빌드가 멈춥니다.
+
+```
+ERROR: Cannot create symbolic link : 클라이언트는 필요한 권한을 가지고 있지 않습니다.
+  ... winCodeSign ... libcrypto.dylib
+```
+
+이 프로젝트에는 [scripts/prepare-wincodesign.js](scripts/prepare-wincodesign.js) 가 포함되어 있어,
+`npm run dist` 를 실행하면 **빌드 전에 자동으로** 이 도구를 macOS 폴더(심볼릭 링크)만
+제외하고 미리 풀어 둡니다. 그래서 **관리자 권한·개발자 모드 없이도, 어떤 PC에서든**
+`npm run dist` 한 줄이면 빌드가 됩니다. (수강생이 따로 할 일은 없습니다.)
+
+> 💡 만약 회사·연구소 정책 등으로 자동 준비가 막힌다면, 대안으로 Windows
+> **개발자 모드**(`설정 → 개인 정보 및 보안 → 개발자용`)를 켜거나, 터미널을
+> **관리자 권한으로 실행**한 뒤 `npm run dist` 를 다시 시도하세요.
 
 ---
 
@@ -239,5 +263,6 @@ npm run dist
 | 흰 화면만 보임 | URL이 비공개/차단됨 | 시크릿 모드로 URL 확인, Artifact를 공개 공유로 설정 |
 | 주소를 바꿨는데 앱이 안 켜짐 | JSON 문법 깨짐 (따옴표·쉼표 등) | `service-url.json` 의 `{ } " :` 기호가 그대로인지 확인 |
 | 주소를 바꿨는데 화면에 반영 안 됨 | 창을 다시 켜지 않음 | 창을 닫고 `npm start` 다시 실행 |
-| `npm run dist` 가 실패함 | 빌드 도구 다운로드 실패(네트워크) | 인터넷 확인 후 `npm run dist` 다시 실행 |
+| `[prepare-wincodesign] ... 다운로드 실패` | 빌드 도구 다운로드 실패(네트워크) | 인터넷 확인 후 `npm run dist` 다시 실행 |
+| `Cannot create symbolic link` (winCodeSign) | `predist` 자동 준비가 막힘 (정책 등) | 개발자 모드 켜기 또는 관리자 권한으로 재실행 (9장 참고) |
 | 설치 파일 실행 시 SmartScreen 경고 | 코드 서명이 없음 | `추가 정보 → 실행` 클릭 (10장 참고) |
