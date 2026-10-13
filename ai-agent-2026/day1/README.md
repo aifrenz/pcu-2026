@@ -18,14 +18,14 @@
 
 ## 관통 과제 고르기
 
-고민되면 A를 고르세요. 프롬프트의 `[ ]`만 내 상황으로 바꾸면 됩니다.
+고민되면 A를 고르세요. 프롬프트의 `[ ]`만 내 상황으로 바꾸면 됩니다. **무엇을 넣을지 막막하면 [`data/fill_in_examples.md`](data/fill_in_examples.md)에서 하나 골라 그대로 넣으세요.**
 
 | 과제 | 내용 | 프롬프트 | 예제 자료 |
 | --- | --- | --- | --- |
-| A 동향 브리핑 | 내 분야 AI·업계 뉴스를 찾아 정리 | [`prompts/A_trend_briefing.md`](prompts/A_trend_briefing.md) | — |
-| B 문서 → 보고서 | 회의록을 할 일표와 공유 메일로 | [`prompts/B_doc_to_report.md`](prompts/B_doc_to_report.md) | [`data/meeting_notes_sample.md`](data/meeting_notes_sample.md) |
+| A 동향 브리핑 | 내 분야 AI·업계 뉴스를 찾아 정리 | [`prompts/A_trend_briefing.md`](prompts/A_trend_briefing.md) | [`data/fill_in_examples.md`](data/fill_in_examples.md) (처지별 주제) |
+| B 문서 → 보고서 | 회의록을 할 일표와 공유 메일로 | [`prompts/B_doc_to_report.md`](prompts/B_doc_to_report.md) | [`data/meeting_notes_sample.md`](data/meeting_notes_sample.md), [`data/meeting_notes_more.md`](data/meeting_notes_more.md) (연구실·회사·메일) |
 | C 조사 비교표 | 제품·공고·논문을 기준별로 비교 | [`prompts/C_comparison.md`](prompts/C_comparison.md) | [`data/comparison_personas.md`](data/comparison_personas.md) |
-| D 내 업무 | 반복되는 내 일 (예: 논문 동향 정리) | [`prompts/D_my_work.md`](prompts/D_my_work.md) | — |
+| D 내 업무 | 반복되는 내 일 (예: 논문 동향 정리) | [`prompts/D_my_work.md`](prompts/D_my_work.md) | [`data/fill_in_examples.md`](data/fill_in_examples.md) (연구 주제 13개) |
 
 ## 더 잘하고 싶다면
 

@@ -1,6 +1,6 @@
 # 과제 C · 조사 비교표
 
-예제 조건: [`../data/comparison_personas.md`](../data/comparison_personas.md)에서 페르소나 하나를 골라 `[ ]`에 넣습니다. 노트북 대신 채용공고·논문·서비스 비교로 바꿔도 됩니다.
+예제 조건: [`../data/comparison_personas.md`](../data/comparison_personas.md)에서 페르소나 하나를 골라 `[ ]`에 넣습니다. 노트북 대신 채용공고·업무용 AI 서비스·온라인 강의 비교로 바꿔도 됩니다. 조건과 비교 항목 예시는 [`../data/fill_in_examples.md`](../data/fill_in_examples.md#과제-c--조사-비교표--조건-바꾸기)에 있습니다.
 
 ## STEP 1
 

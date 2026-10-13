@@ -1,6 +1,13 @@
 # 과제 B · 문서 → 보고서
 
-예제 자료: [`../data/meeting_notes_sample.md`](../data/meeting_notes_sample.md)의 가상 회의록을 그대로 쓰면 됩니다. 내 문서를 쓸 때는 개인정보·기밀을 지우고 씁니다.
+`[회의록 붙여넣기]` 자리에는 아래 가상 자료 중 하나를 통째로 붙여 넣으면 됩니다. 내 문서를 쓸 때는 개인정보·기밀을 지우고 씁니다.
+
+| 자료 | 이런 분께 |
+| --- | --- |
+| [교내 AI 경진대회 준비 회의](../data/meeting_notes_sample.md) | 누구나 (기본) |
+| [① 연구실 주간 미팅](../data/meeting_notes_more.md) | 대학원생 |
+| [② 고객지원팀 챗봇 도입 회의](../data/meeting_notes_more.md) | 직장인 |
+| [③ 교육 일정 조율 메일 4통](../data/meeting_notes_more.md) | 행정·교육 담당 |
 
 ## STEP 1
 
@@ -54,4 +61,4 @@
 - 상금이 300만 원 → 250만 원으로 바뀐 것을 어떻게 처리했나요?
 - '이번 주', '다음 주 금요일'을 임의의 날짜로 바꾸지 않았나요?
 - 담당자가 없는 '구글 폼 제작'에 담당자를 지어내지 않았나요?
-- 정답 요소는 [`../data/meeting_notes_answer_key.md`](../data/meeting_notes_answer_key.md)에서 확인합니다.
+- 정답 요소는 [`../data/meeting_notes_answer_key.md`](../data/meeting_notes_answer_key.md)에서 확인합니다. ①~③ 자료는 각 자료 아래 '확인 포인트'를 봅니다.
