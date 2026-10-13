@@ -5,16 +5,16 @@
 - **완주 기준:** STEP 2와 STEP 3을 모두 해 보고, 관찰 기록표 첫 줄('다음 단계를 정한 것은 누구?')을 채우면 완주입니다.
 - **준비물:** 범용 AI 계정 1개(Claude 권장, ChatGPT·Gemini 가능, 무료 계정 가능), 고른 관통 과제
 
-## 진행 순서 (실습 50분)
+## 진행 순서
 
-| 시간 | 단계 | 할 일 | 파일 |
+| 순서 | 단계 | 할 일 | 파일 |
 | --- | --- | --- | --- |
-| 강의 중 5분 | STEP 1 맛보기 | 질문 한 줄로 던지고 답 저장 | [`prompts/step1.md`](prompts/step1.md) |
-| 19:50–19:53 | STEP 1 복기 | 질문 한 줄로는 어디까지 나왔나 | — |
-| 19:53–20:10 | STEP 2 사람이 지휘 | 조사 → 분석 → 정리 → 작성을 한 단계씩 4번 지시 | 과제별 프롬프트 파일 |
-| 20:10–20:27 | STEP 3 AI에게 위임 | **새 대화**에서 목표·기준·제약만 주고 맡기기 | 과제별 프롬프트 파일 |
-| 20:27–20:35 | 비교 기록 | 관찰 기록표 채우기 | [`worksheets/observation_sheet.md`](worksheets/observation_sheet.md) |
-| 20:35–20:40 | 제출 | Google Form 5문항 | [`worksheets/form_questions.md`](worksheets/form_questions.md) |
+| 0 (강의 중) | STEP 1 맛보기 | 질문 한 줄로 던지고 답 저장 | [`prompts/step1.md`](prompts/step1.md) |
+| 1 | STEP 1 복기 | 질문 한 줄로는 어디까지 나왔나 | — |
+| 2 | STEP 2 사람이 지휘 | 조사 → 분석 → 정리 → 작성을 한 단계씩 4번 지시 | 과제별 프롬프트 파일 |
+| 3 | STEP 3 AI에게 위임 | **새 대화**에서 목표·기준·제약만 주고 맡기기 | 과제별 프롬프트 파일 |
+| 4 | 비교 기록 | 관찰 기록표 채우기 | [`worksheets/observation_sheet.md`](worksheets/observation_sheet.md) |
+| 5 | 제출 | Google Form 5문항 | [`worksheets/form_questions.md`](worksheets/form_questions.md) |
 
 ## 관통 과제 고르기
 
@@ -30,7 +30,7 @@
 ## 더 잘하고 싶다면
 
 - [`prompts/delegation_card.md`](prompts/delegation_card.md) — 좋은 위임 프롬프트 공식, 약한 지시 → 강한 지시, 한 장 프롬프트 카드
-- [`homework.md`](homework.md) — 시간이 부족했다면 집에서 15분 복습 코스와 확장 과제
+- [`homework.md`](homework.md) — 시간이 부족했다면 집에서 짧은 복습 코스와 확장 과제
 
 ## 심화 (개발 경험자, 선택)
 
