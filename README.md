@@ -1,6 +1,16 @@
 # pcu-2026
 배재대학교 AI 교육
 
+## AI Agent 심화 — AI Agent 이해와 실전 활용 (2026.10.14–16)
+
+개인 AI 비서에서 업무 자동화·앱 제작까지, 3일 과정 실습 자료입니다. 👉 [`ai-agent-2026/`](ai-agent-2026/)
+
+| DAY | 주제 | 실습 자료 |
+| --- | --- | --- |
+| DAY 1 · 10/14(수) | 생성형 AI에서 AI 에이전트로 | [`ai-agent-2026/day1/`](ai-agent-2026/day1/) |
+| DAY 2 · 10/15(목) | 개인 AI 비서와 업무 자동화 | DAY 2에 공개 |
+| DAY 3 · 10/16(금) | 나만의 AI 에이전트 만들기 | DAY 3에 공개 |
+
 ## Google Workspace Labs
 [Workspace Experiments](https://workspace.google.com/experiments/)
 
