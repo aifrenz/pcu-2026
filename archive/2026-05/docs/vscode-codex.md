@@ -16,7 +16,7 @@ VSCode 확장 프로그램으로 설치하면, 편집기 안에서 Codex와 대�
 
 | 항목 | 설명 |
 |---|---|
-| VSCode | 설치 완료 (루트 [README](../README.md)의 "개발 환경 준비" 참고) |
+| VSCode | 설치 완료 ([README](../README.md)의 "개발 환경 준비" 참고) |
 | OpenAI 계정 | [chatgpt.com](https://chatgpt.com) 의 ChatGPT 계정. 충분히 쓰려면 **유료 플랜(Plus/Pro)** 또는 OpenAI API 키 권장 |
 | 인터넷 연결 | AI 응답은 서버에서 처리되므로 필수 |
 

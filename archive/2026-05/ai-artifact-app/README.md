@@ -32,7 +32,7 @@
 터미널을 열면 가장 먼저 실습 폴더 안으로 들어가야 합니다.
 
 ```powershell
-cd ai-artifact-app
+cd archive/2026-05/ai-artifact-app
 ```
 
 - `cd` 는 "폴더 이동(change directory)" 명령입니다.
