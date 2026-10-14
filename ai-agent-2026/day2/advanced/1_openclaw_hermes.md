@@ -1,10 +1,34 @@
 # 심화 1 · OpenClaw 또는 Hermes 직접 설치
 
-강의에서 강사가 시연한 개인 AI 비서를 **본인 노트북의 Docker 안에서** 직접 띄워 봅니다. 둘 중 하나만 하면 됩니다.
+강의에서 강사가 시연한 개인 AI 비서를 **본인 노트북에** 직접 띄워 봅니다. 둘 중 하나만 하면 됩니다. **수업 중에는 강사 시연으로 충분하고, 설치는 집에서 아래 수칙을 보며 천천히** 하세요.
+
+> **Docker Desktop은 필요 없습니다.** 두 도구 모두 데스크톱 앱이나 설치 명령 한 줄로 설치됩니다. Docker를 이미 쓰는 분만 Docker로 띄우세요. 에이전트가 내 컴퓨터와 분리되어 더 안전합니다.
+
+## 설치 방법 고르기
+
+| 방법 | OpenClaw | Hermes Agent |
+| --- | --- | --- |
+| **데스크톱 앱 (추천)** | Windows: [Windows Hub 설치 파일](https://github.com/openclaw/openclaw-windows-node/releases/latest) · macOS: [릴리스](https://github.com/openclaw/openclaw/releases)의 `.dmg` | [Hermes 설치 안내](https://hermes-agent.nousresearch.com/docs/getting-started/installation/)의 데스크톱 앱 (macOS는 Apple Silicon만) |
+| 설치 명령 (Windows PowerShell) | `iwr -useb https://openclaw.ai/install.ps1 \| iex` | `iex (irm https://hermes-agent.nousresearch.com/install.ps1)` |
+| 설치 명령 (macOS · Linux) | `curl -fsSL https://openclaw.ai/install.sh \| bash` | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh \| bash` |
+| Docker (이미 쓰는 분) | [OpenClaw 설치 문서](https://docs.openclaw.ai/install)의 Docker 안내 | [Hermes 설치 안내](https://hermes-agent.nousresearch.com/docs/getting-started/installation/) 참고 |
+
+- 설치 명령은 인터넷에서 받은 스크립트를 바로 실행합니다. **주소가 위의 공식 주소인지 한 번 더 확인**하세요.
+- 설치 방법은 버전마다 바뀝니다. 막히면 공식 문서([OpenClaw](https://docs.openclaw.ai/install) · [Hermes](https://hermes-agent.nousresearch.com/docs/getting-started/installation/))를 기준으로 합니다.
+
+## 내 노트북에 깔 때 지킬 것
+
+OpenClaw·Hermes는 명령을 실행하고 파일을 읽고 쓸 수 있는 에이전트입니다. Docker 없이 깔면 내 노트북 전체에 닿을 수 있으니 세 가지를 지킵니다.
+
+1. **개인 메일·드라이브·회사 계정을 연결하지 않습니다.** 텔레그램 봇과 모델 키만 씁니다.
+2. **명령 실행·파일 쓰기는 '승인 후 실행'** 으로 둡니다. 설정에 없으면 실행 전에 묻도록 지시문에 적습니다.
+3. **끝나면 정리합니다.** 봇 토큰과 API 키를 폐기하고, 계속 쓰지 않으면 앱을 지웁니다.
+
+## 연결하고 확인하기
 
 | 항목 | OpenClaw | Hermes Agent |
 | --- | --- | --- |
-| 설치 | `git clone https://github.com/openclaw/openclaw.git` 후 `./docker-setup.sh` ([안내](https://github.com/rohitg00/awesome-openclaw)) | `git clone https://github.com/NousResearch/hermes-agent.git` 후 Docker 또는 설치 스크립트 ([안내](https://www.virtua.cloud/learn/en/tutorials/self-host-hermes-agent-vps)) |
+| 첫 설정 | 설치 뒤 나오는 안내(onboard)를 따라 모델·메신저 연결 | 설치 뒤 `hermes setup` |
 | 모델 연결 | 개인 API 키, 또는 ChatGPT 구독 로그인 ([공식 문서](https://docs.openclaw.ai/providers/openai)) | 개인 API 키, 또는 `hermes setup --portal`로 Nous Portal |
 | 메신저 | 텔레그램 @BotFather에서 봇 토큰 발급 후 등록 | 텔레그램 봇 등록 후 `hermes gateway start` |
 | 확인 | 내 봇에 시나리오 카드의 일을 말로 시켜 보기 | 일을 끝낸 뒤 새 스킬 파일이 생겼는지 확인 |
@@ -28,4 +52,4 @@
 
 ## 끝내기
 
-실습이 끝나면 컨테이너를 멈추고(`docker compose down` 등), 쓰지 않는 봇 토큰과 API 키를 폐기합니다.
+실습이 끝나면 쓰지 않는 봇 토큰과 API 키를 폐기합니다. 앱으로 깔았다면 계속 쓰지 않을 때 앱을 지우고, Docker로 띄웠다면 컨테이너를 멈춥니다(`docker compose down` 등).

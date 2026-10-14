@@ -2,14 +2,17 @@
 
 기본 실습(시나리오 카드 + 1회 실행)을 마친 분이 **같은 카드를 더 깊게** 해 보는 과제입니다. 수업 중에 시작하고 마무리는 과제로 해도 됩니다.
 
+> **Docker Desktop은 필요 없습니다.** 세 과제 모두 앱이나 명령 한 줄로 설치합니다. Docker를 이미 쓰는 분만 OpenClaw·Hermes를 Docker로 띄우세요. 내 컴퓨터와 분리되어 더 안전합니다.
+
 | 심화 | 내용 | 필요한 것 | 파일 |
 | --- | --- | --- | --- |
-| 1 | OpenClaw 또는 Hermes를 내 노트북에 직접 설치 | Docker, 텔레그램, 모델 API 키(또는 ChatGPT 구독·Nous Portal) | [`1_openclaw_hermes.md`](1_openclaw_hermes.md) |
-| 2 | n8n으로 '주간 뉴스 브리핑' 워크플로 만들기 | Docker, 모델 API 키 | [`2_n8n_news_briefing.md`](2_n8n_news_briefing.md) |
+| 1 | OpenClaw 또는 Hermes를 내 노트북에 직접 설치 (집에서 하는 과제) | 데스크톱 앱 또는 설치 명령 한 줄, 텔레그램, 모델 API 키(또는 ChatGPT 구독·Nous Portal) | [`1_openclaw_hermes.md`](1_openclaw_hermes.md) |
+| 2 | n8n으로 '주간 뉴스 브리핑' 워크플로 만들기 | Node.js + `npx n8n` (또는 n8n Cloud 무료 체험), 모델 API 키 | [`2_n8n_news_briefing.md`](2_n8n_news_briefing.md) |
 | 3 | 쓰고 있는 AI 도구에 MCP 서버 1개 연결 | 데스크톱 AI 앱 또는 코딩 에이전트 | [`3_mcp.md`](3_mcp.md) |
 
 ## 공통 수칙
 
 - **개인 파일·메일·회사 계정을 연결하지 않은 상태로** 시작합니다.
+- OpenClaw·Hermes처럼 셸·파일에 닿는 에이전트는 **명령 실행·파일 쓰기를 '승인 후 실행'** 으로 둡니다.
 - API 키에는 **지출 상한**을 먼저 걸고, 키는 화면에 띄우지 않습니다. 실습 뒤에는 폐기하거나 한도를 낮춥니다.
 - 설치 명령은 버전마다 바뀝니다. 막히면 각 프로젝트의 공식 문서를 기준으로 합니다.

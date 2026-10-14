@@ -7,15 +7,20 @@ Schedule Trigger → RSS Read → Code(목록 묶기) → AI Agent(+ Chat Model)
    주기 (Workflow)     입력 (Workflow)   형식 (Workflow)     판단 (Agent)          전달 (Workflow)
 ```
 
-강사가 Starter 파일을 나눠 주면 가져오기(Import)로 시작하고, 아래는 **노드를 직접 만들며 확인**하는 순서입니다.
+아래 순서대로 **노드를 직접 만들며 확인**합니다.
 
 ## 0. 준비
 
-- n8n 실행 (Docker):
-  ```bash
-  docker run -it --rm -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
-  ```
-  브라우저에서 `localhost:5678`을 열고 계정을 만듭니다(내 컴퓨터 안의 계정입니다).
+n8n을 띄우는 방법은 세 가지입니다. 위에서부터 되는 것 하나만 하면 됩니다.
+
+| 방법 | 이럴 때 | 하는 법 |
+| --- | --- | --- |
+| **npx n8n (추천)** | 내 노트북에 프로그램을 설치할 수 있다 | [Node.js](https://nodejs.org/) LTS(20.19~24.x)를 설치하고 터미널에서 `npx n8n` → 브라우저에서 `localhost:5678` |
+| n8n Cloud 무료 체험 | 회사·학교 노트북이라 설치가 막힌다 | [n8n.io](https://n8n.io/)에서 체험 계정 만들기. 화면과 노드는 같습니다 |
+| Docker | 이미 Docker를 쓰고 있다 | `docker run -it --rm -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n` |
+
+- `npx n8n`과 Docker로 띄우면 처음 화면에서 계정을 만듭니다. 내 컴퓨터 안의 계정입니다.
+- 끝낼 때는 터미널에서 `Ctrl + C`를 누릅니다.
 - **모델 API 키 1개** (Anthropic 또는 OpenAI). AI Agent 노드는 구독이 아니라 API 키로 연결합니다. 지출 상한을 먼저 겁니다.
 
 ## 1. Schedule Trigger — 언제
@@ -92,6 +97,8 @@ return [{ json: { newsText: lines.join('\n'), count: items.length } }];
 
 | 이럴 때 | 이렇게 |
 | --- | --- |
+| `npx n8n`이 실행되지 않는다 | 터미널에서 `node -v`로 버전 확인 (20.19~24.x). Node.js를 설치한 뒤에는 터미널을 새로 연다 |
+| `localhost:5678`이 열리지 않는다 | n8n을 띄운 터미널 창이 켜져 있는지 확인. 닫으면 n8n도 꺼진다 |
 | RSS에서 결과가 0건 | 검색어를 더 넓게, 또는 브라우저로 URL을 열어 결과가 있는지 확인 |
 | AI Agent 노드가 실패 | Chat Model이 붙어 있는지, Credential의 API 키와 모델 이름이 맞는지 확인 |
 | `{{ $json.newsText }}`가 비어 있음 | Code 노드 출력에 newsText가 있는지 먼저 실행해 확인 |
