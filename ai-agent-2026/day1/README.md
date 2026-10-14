@@ -14,7 +14,7 @@
 | 2 | STEP 2 사람이 지휘 | 조사 → 분석 → 정리 → 작성을 한 단계씩 4번 지시 | 과제별 프롬프트 파일 |
 | 3 | STEP 3 AI에게 위임 | **새 대화**에서 목표·기준·제약만 주고 맡기기 | 과제별 프롬프트 파일 |
 | 4 | 비교 기록 | 관찰 기록표 채우기 | [`worksheets/observation_sheet.md`](worksheets/observation_sheet.md) |
-| 5 | 제출 | Google Form 5문항 | [`worksheets/form_questions.md`](worksheets/form_questions.md) |
+| 5 | 제출 | Google Form 5문항 — **https://forms.gle/HMGb6EAnjdK2hz16A** | [`worksheets/form_questions.md`](worksheets/form_questions.md) |
 
 ## 관통 과제 고르기
 
@@ -46,5 +46,7 @@
 | STEP 3에서 AI가 계획 없이 바로 답한다 | 마지막 줄 "계획을 먼저 보여 주고"가 들어갔는지 확인하고 다시 보낸다 |
 | 검색을 안 하고 예전 내용으로 답한다 | 검색·리서치 기능을 켜거나 "최근 7일 자료를 검색해서"를 넣는다 |
 | 리서치가 너무 오래 걸린다 | 제약에 "출처 5개 이내, 10분 안에"를 더하고, 기다리는 동안 기록표를 채운다 |
+| 없는 출처 · 논문을 만들어 낸다 | 기준에 "링크로 확인할 수 있는 것만"을 넣고, 링크를 직접 눌러 본다 |
+| AI가 질문만 계속한다 | 질문에 답하고, 다음엔 그 답을 처음 지시문에 넣는다 |
 | 무료 한도에 걸렸다 | 다른 AI 서비스로 옮기거나 짝의 화면을 함께 보며 기록한다 |
 | 결과가 마음에 안 든다 | 정상입니다. 어느 기준이 빠졌는지 기록하는 것이 오늘의 목표입니다 |
