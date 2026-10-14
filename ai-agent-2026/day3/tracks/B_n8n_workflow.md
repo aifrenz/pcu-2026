@@ -7,7 +7,9 @@ Form Trigger (입력) → AI Agent + Chat Model (판단) → 결과 응답 / 메
 ```
 
 - AI Agent 노드는 **모델 API 키**가 필요합니다. 지출 상한을 먼저 겁니다.
-- n8n 실행: `docker run -it --rm -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n`
+- n8n 실행: **Docker는 필요 없습니다.** [Node.js](https://nodejs.org/) LTS(20.19~24.x)를 설치하고 터미널에서 `npx n8n` → 브라우저에서 `localhost:5678`
+  - 회사·학교 노트북이라 설치가 막히면 [n8n Cloud](https://n8n.io/) 체험 계정을 씁니다. 화면과 노드는 같습니다.
+  - 이미 Docker를 쓰는 분은 `docker run -it --rm -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n`
 
 ## 순서
 
