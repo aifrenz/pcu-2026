@@ -1,24 +1,37 @@
 # DAY 3 · AI 에이전트 미니 프로젝트
 
-어제 만든 시나리오 카드를 **실제로 동작하는 에이전트**로 만듭니다.
+> **처음 오신 분은 여기만 누르세요 → [회의록 정리기 만들기 (트랙 A0, 약 50분)](quickstart/2_meeting_todo.md)**  
+> 복사 · 프로젝트 만들기 · 새 대화가 헷갈리면 [처음 하는 분 안내 (3분)](../day2/quickstart/start_here.md)를 보세요.
 
-- **목표:** 어제의 시나리오 카드를 '입력 → AI 판단 → 도구 → 결과'로 동작하는 나만의 에이전트로 만듭니다.
-- **완주 기준:** 입력을 넣으면 AI가 판단·생성해 결과가 나오는 흐름이 **실제로 한 번** 동작하면 완주입니다. 화면만 있고 AI 판단이 없으면 목업입니다. 미완성이어도 어디까지 됐는지 제출합니다.
-- **준비물:** 노트북, 어제의 시나리오 카드, 범용 AI 계정 (트랙 C는 Coding Agent 하나)
+## 오늘 할 일
 
-> **오프닝:** 어제 강사가 설치한 비서에게 "어제 무엇을 부탁받았지?"를 물어 비교 기록표의 '기억' 칸을 함께 확인합니다.
+1. 어제처럼 AI 채팅 화면에서 **나만의 에이전트**를 만든다 (복사해서 붙여 넣기 + 한 칸만 내 것으로 바꾸기)
+2. 테스트 입력 두 개를 넣어 **결과가 바뀌는지** 본다 — 바뀌면 AI가 판단하고 있다는 뜻이고, **완주**입니다
+3. 2분 데모를 연습하고 Form으로 제출한다 ([데모와 제출](worksheets/demo_and_submit.md))
 
-> **처음이면 `quickstart`만 하세요.** 아래 진행 순서 표는 직접 설계하고 싶은 분용입니다.
->
-> **가장 쉬운 길 · 바로 실습:** [`quickstart/`](quickstart/README.md)에서 프로젝트 하나를 골라 **회색 상자를 차례로 복사해 붙여 넣기만** 하세요. 빈칸이 없고, 테스트 자료와 안전 테스트, 2분 데모 대본까지 들어 있습니다.
+준비물은 노트북과 AI 계정 하나(무료 가능)뿐입니다. 미완성이어도 어디까지 됐는지 제출합니다.
 
-> **막막하면:** [`examples/project_examples.md`](examples/project_examples.md)에서 완성 예시 6개 중 하나를 골라 그대로 만드세요. 캔버스 · 지시문 · 웹앱 프롬프트 · 테스트 입력 두 개가 한 묶음으로 들어 있습니다.
+> **수업 시작 때:** 어제 강사가 설치한 비서에게 "어제 무엇을 부탁받았지?"를 물어, 비서가 기억하는지 함께 확인합니다. 보기만 하면 됩니다.
+
+**트랙**은 '만드는 방법'입니다. 오늘은 **A0(AI 채팅 화면에서 만들기)** 만 하면 됩니다. A · B · C는 시간이 남는 분이나 개발 경험자용입니다.
+
+---
+
+# 더 알아보기 (시간이 남는 분 · 직접 설계하고 싶은 분)
+
+여기부터는 **오늘 완주에 필요하지 않습니다.**
+
+| 이런 분 | 가 볼 곳 |
+| --- | --- |
+| 어제 다른 시나리오를 했다 (뉴스 · 노트북 · 논문 · 지원사업 · 메일) | [`quickstart/`](quickstart/README.md)의 다른 프로젝트 5개 |
+| 완성 예시를 보고 싶다 | [`examples/project_examples.md`](examples/project_examples.md) |
+| 캔버스를 처음부터 직접 설계하고 싶다 | 아래 '진행 순서' |
 
 ## 진행 순서
 
 | 순서 | 단계 | 할 일 | 파일 |
 | --- | --- | --- | --- |
-| 1 | 설계 캔버스 | 시나리오 카드를 5칸으로 압축 + 테스트 입력 두 개 정하기 | [`design_canvas.md`](design_canvas.md) |
+| 1 | 설계 캔버스 | 시나리오 카드를 5칸으로 줄이기 + 테스트 입력 두 개 정하기 | [`design_canvas.md`](design_canvas.md) |
 | 2 | 트랙별 제작 | A0·A·B·C 중 하나 (중간에 'AI 판단이 한 번이라도 돌았나' 점검) | [`tracks/`](tracks/) |
 | 3 | 안전 · 데모 준비 | 체크리스트 5문항 + 2분 데모 연습 | [`worksheets/safety_checklist.md`](worksheets/safety_checklist.md) |
 | 4 | 제출 | 데모 링크·화면 | [`worksheets/demo_and_submit.md`](worksheets/demo_and_submit.md) |
@@ -42,7 +55,7 @@
 
 | 트랙 | 대상 | 무엇을 만드나 | 도구 | 안내 |
 | --- | --- | --- | --- | --- |
-| A0 기본 | 모두 | 맞춤 에이전트 (지시문 + 지식 파일 + 도구) | 범용 AI의 프로젝트·맞춤 에이전트 기능 | [`tracks/A0_custom_agent.md`](tracks/A0_custom_agent.md) |
+| A0 기본 | 모두 | 맞춤 에이전트 (지시문 + 참고 파일 + 도구) — AI 채팅 화면에서 | 범용 AI의 프로젝트·맞춤 에이전트 기능 | [`tracks/A0_custom_agent.md`](tracks/A0_custom_agent.md) |
 | A 기본+ | 모두 | AI 판단이 들어간 작은 웹앱 | Artifacts 등 자연어 앱 제작, (선택) Stitch로 화면 설계 | [`tracks/A_web_app.md`](tracks/A_web_app.md) |
 | B 중급 | 자동화에 관심 | 폼·웹훅 입력 → AI Agent 노드 → 전달 | n8n 또는 Make | [`tracks/B_n8n_workflow.md`](tracks/B_n8n_workflow.md) |
 | C 심화 | 개발 경험자 | 웹앱 + API·MCP 연결 | Claude Code 등 Coding Agent | [`tracks/C_coding_agent.md`](tracks/C_coding_agent.md) |
