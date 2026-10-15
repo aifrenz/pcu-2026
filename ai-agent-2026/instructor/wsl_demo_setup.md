@@ -105,7 +105,7 @@ openclaw doctor                     # 문제 점검
 
 ```bash
 curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
-hermes setup            # 모델 공급자 · 키
+hermes model            # 'ChatGPT or Codex Subscription' → 주소를 시크릿 창에서 열고 코드 입력 (API 키 없이)
 hermes gateway setup    # 텔레그램 (OpenClaw와 다른 봇 토큰)
 hermes doctor
 ```
@@ -172,7 +172,9 @@ PowerShell:
 
 ```powershell
 wsl --terminate openclaw
-wsl --export openclaw E:\openclaw.tar    # 내일 DAY 3 오프닝용 (토큰이 들어 있으니 USB는 직접 보관)
+wsl --terminate hermes-live
+wsl --export openclaw    E:\openclaw.tar      # 내일 DAY 3 오프닝용 (토큰이 들어 있으니 USB는 직접 보관)
+wsl --export hermes-live E:\hermes-live.tar   # 수업 중 라이브 설치한 Hermes + 만든 스킬 · 기억
 wsl --unregister openclaw
 wsl --unregister hermes-live
 wsl --unregister Ubuntu-24.04
@@ -180,7 +182,7 @@ del C:\wsl\base.tar
 wsl -l -v                                 # 아무것도 없으면 OK
 ```
 
-- [ ] `E:\openclaw.tar`, `E:\base.tar`가 USB에 있다
+- [ ] `E:\openclaw.tar`, `E:\hermes-live.tar`, `E:\base.tar`가 USB에 있다
 - [ ] 강의 PC에 복제본이 하나도 없다
 - [ ] 브라우저에서 텔레그램 웹 · Claude 로그아웃, 시크릿 창 닫기
 - [ ] (WSL을 처음 설치했다면) 센터 담당자에게 WSL 기능을 남겨 두어도 되는지 확인
@@ -189,12 +191,14 @@ wsl -l -v                                 # 아무것도 없으면 OK
 
 ```powershell
 mkdir C:\wsl
-wsl --import openclaw C:\wsl\openclaw E:\openclaw.tar
-wsl --import cc-live  C:\wsl\cc-live  E:\base.tar      # Claude Code 라이브 설치용 깨끗한 복제본
+wsl --import openclaw    C:\wsl\openclaw    E:\openclaw.tar
+wsl --import hermes-live C:\wsl\hermes-live E:\hermes-live.tar
+wsl --import cc-live     C:\wsl\cc-live     E:\base.tar      # Claude Code 라이브 설치용 깨끗한 복제본
 ```
 
 - [ ] `wsl -d openclaw` → `openclaw gateway status` (꺼져 있으면 게이트웨이 켜기) → 텔레그램 답 확인
-- [ ] 오프닝: 봇에게 "어제 무엇을 부탁받았지?" → 비교 기록표 '기억' 칸 확인
+- [ ] `wsl -d hermes-live` → 어제 메모한 명령으로 Hermes 게이트웨이 켜기 → 텔레그램 답 확인. 두 터미널 탭은 오프닝이 끝날 때까지 열어 둠
+- [ ] 오프닝: 두 봇에게 "어제 무엇을 부탁받았지?" → 비교 기록표 '기억' 칸 확인
 - [ ] Claude Code 라이브 설치는 `wsl -d cc-live`에서 ([장면 3](../day3/demo/claude_code_meeting_todo.md)). 로그인은 시크릿 창에서
 - [ ] 수업 뒤 5번과 같은 방법으로 정리하고, **봇 토큰 두 개와 API 키를 폐기**
 
