@@ -34,6 +34,10 @@
 - **GitHub 계정이 없어도 됩니다.** 수업 중에는 웹 화면에서 회색 상자를 복사하면 충분합니다.
 - 전체를 내려받고 싶다면 초록색 `Code` 버튼 → `Download ZIP`, 개발 경험이 있다면 `git clone`.
 
+## 강사용
+
+- [강의 PC의 WSL2에서 심화 시연하기 · 준비표](instructor/wsl_demo_setup.md) — Windows에서 WSL로 따라 해 보고 싶은 수강생도 참고할 수 있습니다.
+
 ## 라이선스
 
 [MIT](LICENSE) — 자유롭게 고쳐 쓰셔도 됩니다.
