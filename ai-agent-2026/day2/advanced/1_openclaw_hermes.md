@@ -67,11 +67,13 @@ OpenClaw·Hermes는 명령을 실행하고 파일을 읽고 쓸 수 있는 에�
 | 항목 | OpenClaw | Hermes Agent |
 | --- | --- | --- |
 | 첫 설정 | 설치 뒤 나오는 안내(onboard)를 따라 모델·메신저 연결 | 설치 뒤 `hermes setup` |
-| 모델 연결 | 개인 API 키, 또는 ChatGPT 구독 로그인 ([공식 문서](https://docs.openclaw.ai/providers/openai)) | 개인 API 키, 또는 `hermes setup --portal`로 Nous Portal |
+| 모델 연결 | 개인 API 키, 또는 ChatGPT 구독 로그인 ([공식 문서](https://docs.openclaw.ai/providers/openai)) | 개인 API 키, **ChatGPT 구독 로그인**(`hermes model`에서 OpenAI Codex), GitHub Copilot, Nous Portal(`hermes setup --portal`), 내 컴퓨터의 Ollama 등 ([공식 문서](https://hermes-agent.nousresearch.com/docs/integrations/providers)) |
 | 메신저 | 텔레그램 @BotFather에서 봇 토큰 발급 후 등록 | `hermes gateway setup`으로 텔레그램 등록 후, 설정 마지막 안내대로 게이트웨이 켜기 |
 | 확인 | 내 봇에 시나리오 카드의 일을 말로 시켜 보기 | 일을 끝낸 뒤 새 스킬 파일이 생겼는지 확인 |
 
-- Claude 구독(Pro·Max)으로는 연결할 수 없습니다. Claude 모델은 API 키로 연결합니다.
+- **이미 ChatGPT를 구독 중이면** 두 도구 모두 그 구독으로 로그인해 별도 사용료 없이 써 볼 수 있습니다. 어느 플랜까지 되는지, 구독 한도에서 어떻게 차감되는지는 공식 문서에 나와 있지 않으니 처음에는 짧게 써 보고 확인합니다.
+- **Claude 구독:** Pro로는 연결할 수 없습니다. Hermes 문서에 따르면 Max는 '추가 사용량(extra usage)'을 따로 구매한 경우에만 로그인 연결이 되고, 그 사용량은 별도로 과금됩니다. 그 밖에는 API 키로 연결합니다.
+- **완전 무료로 하려면:** 내 컴퓨터에서 Ollama로 오픈 모델을 돌려 연결합니다. 다만 도구를 잘 쓰는 모델은 메모리가 넉넉한 컴퓨터가 필요합니다. Gemini 무료 API 키는 Hermes 문서에서도 "에이전트 대화 몇 번 만에 소진될 수 있다"고 안내합니다.
 - 텔레그램 봇 토큰도 비밀번호입니다. 화면 공유 중에 띄우지 않습니다.
 
 ## 자주 쓰는 운영 명령
