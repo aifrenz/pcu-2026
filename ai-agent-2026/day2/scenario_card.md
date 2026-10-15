@@ -2,7 +2,7 @@
 
 어제 Google Form 5번 '다음에 자동화하고 싶은 부분'에서 출발합니다. **마지막 칸이 가장 중요합니다.** 어디까지 고정하고(Workflow) 어디부터 AI에게 맡길지(Agent) 정하세요.
 
-막막하면 [`examples/scenario_examples.md`](examples/scenario_examples.md)의 완성 카드 7개 중 하나를 골라 그대로 써도 됩니다.
+막막하면 [`examples/scenario_examples.md`](examples/scenario_examples.md)의 완성 카드 7개 중 하나를 골라 그대로 써도 됩니다. 내 일로 만들고 싶은데 칸이 안 채워지면 [`quickstart/0_prompt_builder.md`](quickstart/0_prompt_builder.md)로 **AI가 하나씩 물어보게** 하세요.
 
 ## 빈 카드
 

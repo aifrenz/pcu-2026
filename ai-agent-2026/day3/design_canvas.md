@@ -2,7 +2,7 @@
 
 어제 시나리오 카드 7칸을 5칸으로 줄입니다. 옮겨 적으면 됩니다. **'Agent 판단' 칸이 비어 있으면 제작에 들어가지 않습니다.**
 
-막막하면 [`examples/project_examples.md`](examples/project_examples.md)의 완성 캔버스 6개 중 하나를 골라 그대로 써도 됩니다.
+막막하면 [`examples/project_examples.md`](examples/project_examples.md)의 완성 캔버스 6개 중 하나를 골라 그대로 써도 됩니다. 내 일로 만들고 싶다면 [DAY 2 시나리오 0의 도우미](../day2/quickstart/0_prompt_builder.md#day-3에서-다시-쓰려면)로 **AI가 질문하며 캔버스를 채우게** 할 수 있습니다.
 
 ## 빈 캔버스
 

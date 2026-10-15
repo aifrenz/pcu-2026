@@ -8,6 +8,8 @@
 
 > **처음이면 `quickstart`만 하세요.** 아래 진행 순서 표는 카드를 직접 설계하고 싶은 분용입니다.
 >
+> **내 일로 지시문을 만들고 싶다면:** [`quickstart/0_prompt_builder.md`](quickstart/0_prompt_builder.md) — AI가 질문 7개를 하나씩 물어보고 지시문을 완성해 줍니다.
+>
 > **가장 쉬운 길 · 바로 실습:** [`quickstart/`](quickstart/README.md)에서 시나리오 하나를 골라 **회색 상자를 차례로 복사해 붙여 넣기만** 하세요. 빈칸이 없고, 가상 자료가 모두 들어 있습니다.
 
 > **강의 내용 다시 보기:** [`concepts.md`](concepts.md) — 챗봇 vs 비서, 트리거 3가지, Workflow + Agent, API · MCP, 구독 vs API, 권한 화면 읽는 법을 한 장에 정리했습니다.

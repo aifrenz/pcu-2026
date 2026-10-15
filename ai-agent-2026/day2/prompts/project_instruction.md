@@ -14,7 +14,7 @@
 확실하지 않으면 먼저 나에게 물어봐.
 ```
 
-통째로 완성된 지시문 7개는 [`../examples/scenario_examples.md`](../examples/scenario_examples.md)에 있습니다.
+빈칸 채우기가 어려우면 [AI가 질문하며 지시문을 만들어 주는 도우미](../quickstart/0_prompt_builder.md)를 쓰세요. 통째로 완성된 지시문 7개는 [`../examples/scenario_examples.md`](../examples/scenario_examples.md)에 있습니다.
 
 ## 빈칸 예시
 
