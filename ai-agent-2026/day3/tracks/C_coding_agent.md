@@ -5,6 +5,8 @@
 - Claude Code는 Claude Pro·Max 구독으로 쓸 수 있습니다. 다만 컴퓨터에 `ANTHROPIC_API_KEY` 환경 변수가 있으면 구독 대신 API로 과금됩니다.
 - 만드는 앱이 LLM API를 호출하므로 **앱용 API 키**가 따로 필요합니다. 키는 `.env`에만 두고 `.gitignore`에 넣습니다.
 
+> **처음이라면:** 설치부터 계획 승인 · 테스트 · 실행 · 안전 테스트까지 강의 시연 순서대로 적은 [`../demo/claude_code_meeting_todo.md`](../demo/claude_code_meeting_todo.md)를 따라 하세요.
+
 ## 명세 틀
 
 ```

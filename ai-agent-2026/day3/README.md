@@ -41,6 +41,10 @@
 | B 중급 | 자동화에 관심 | 폼·웹훅 입력 → AI Agent 노드 → 전달 | n8n 또는 Make | [`tracks/B_n8n_workflow.md`](tracks/B_n8n_workflow.md) |
 | C 심화 | 개발 경험자 | 웹앱 + API·MCP 연결 | Claude Code 등 Coding Agent | [`tracks/C_coding_agent.md`](tracks/C_coding_agent.md) |
 
+## 강의 시연 따라 하기
+
+강사가 화면에서 Claude Code를 설치해 '회의록 정리기'를 만든 장면을 그대로 적었습니다. 트랙 C를 고른 분은 이 순서대로 하면 됩니다: [`demo/claude_code_meeting_todo.md`](demo/claude_code_meeting_todo.md)
+
 ## 막힐 때
 
 | 이럴 때 | 이렇게 |
