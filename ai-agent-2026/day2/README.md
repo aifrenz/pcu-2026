@@ -6,6 +6,8 @@
 - **완주 기준:** 시나리오 카드 7칸 + 수동 1회 실행 결과. 예약 실행은 플랜이 허용하는 분만 합니다.
 - **준비물:** 범용 AI 계정, 어제 Form에 적은 '다음에 자동화하고 싶은 부분', 강의 중 채운 비교 기록표(OpenClaw·Hermes 칸)
 
+> **가장 쉬운 길 · 바로 실습:** [`quickstart/`](quickstart/README.md)에서 시나리오 하나를 골라 **회색 상자를 차례로 복사해 붙여 넣기만** 하세요. 빈칸이 없고, 가상 자료가 모두 들어 있습니다.
+
 > **강의 내용 다시 보기:** [`concepts.md`](concepts.md) — 챗봇 vs 비서, 트리거 3가지, Workflow + Agent, API · MCP, 구독 vs API, 권한 화면 읽는 법을 한 장에 정리했습니다.
 
 > **막막하면:** [`examples/scenario_examples.md`](examples/scenario_examples.md)에서 완성 카드 7개 중 하나를 골라 그대로 쓰세요. 카드·지시문·1회 실행 문장이 한 묶음으로 들어 있습니다.
