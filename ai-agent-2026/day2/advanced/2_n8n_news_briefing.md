@@ -27,6 +27,7 @@ n8n을 띄우는 방법은 세 가지입니다. 위에서부터 되는 것 하�
 
 - 새 워크플로 → **Schedule Trigger** 추가
 - 매주 월요일 08:00으로 설정 (Trigger Interval: Weeks, 요일 Monday, 시각 8)
+- **시간대 확인:** n8n 기본 시간대는 미국 동부(America/New_York)입니다. 워크플로 **Settings → Timezone**을 `Asia/Seoul`로 바꾸거나, 처음부터 `GENERIC_TIMEZONE=Asia/Seoul npx n8n`으로 띄웁니다. 그대로 두면 한국 시간 월요일 밤에 돕니다.
 - 실습 중에는 기다릴 수 없으니 **Execute workflow** 버튼으로 바로 실행합니다.
 
 ## 2. RSS Read — 무엇을 보고

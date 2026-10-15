@@ -111,7 +111,7 @@ return items.map(it => ({ json: { title: it.json.title, link: it.json.link } }))
 ## ⑤ 기록 보기와 예약
 
 - **Executions 탭:** 지금까지의 실행 기록이 남습니다. 지난 실행을 열면 그때 노드별 데이터를 다시 볼 수 있습니다. 강의에서 실행이 막혔을 때 이 화면으로 대신했습니다.
-- **예약 켜기:** 워크플로를 활성화(Active · Publish)하면 Schedule Trigger의 시각마다 저절로 돕니다. 단 `npx n8n`은 **터미널이 켜져 있고 컴퓨터가 깨어 있을 때만** 돕니다. 매주 꼭 돌려야 하면 n8n Cloud나 늘 켜져 있는 서버가 필요합니다.
+- **예약 켜기:** 워크플로를 활성화(Active · Publish)하면 Schedule Trigger의 시각마다 저절로 돕니다. 그 전에 워크플로 **Settings → Timezone**이 `Asia/Seoul`인지 확인하세요(n8n 기본값은 미국 동부 시간). 단 `npx n8n`은 **터미널이 켜져 있고 컴퓨터가 깨어 있을 때만** 돕니다. 매주 꼭 돌려야 하면 n8n Cloud나 늘 켜져 있는 서버가 필요합니다.
 - **전달 붙이기:** 남에게 보내기 전에는 나에게만 보내거나 승인(Send and Wait) 단계를 넣습니다.
 
 ## 이렇게 나오면 성공
