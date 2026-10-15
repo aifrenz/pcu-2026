@@ -56,13 +56,16 @@
 | 1 | Hermes Agent 라이브 설치, OpenClaw와 같은 메시지 6개 비교 (기억 · 안전 · 권한 테스트 포함) | [`demo/1_hermes_openclaw.md`](demo/1_hermes_openclaw.md) |
 | 2 | `npx n8n`으로 띄우고 뉴스 브리핑 돌리기, 기준 · 입력 · AI 유무를 바꾸는 실험 3가지 | [`demo/2_n8n_briefing.md`](demo/2_n8n_briefing.md) |
 
-## 심화 (선택)
+## 심화 (선택) · 강의에서 본 장면을 직접
+
+전체 지도와 순서는 [`advanced/README.md`](advanced/README.md)에 있습니다.
 
 | 심화 | 내용 | 파일 |
 | --- | --- | --- |
-| 1 | OpenClaw 또는 Hermes 직접 설치 | [`advanced/1_openclaw_hermes.md`](advanced/1_openclaw_hermes.md) |
-| 2 | n8n으로 주간 뉴스 브리핑 워크플로 | [`advanced/2_n8n_news_briefing.md`](advanced/2_n8n_news_briefing.md) |
-| 3 | MCP 서버 1개 연결 | [`advanced/3_mcp.md`](advanced/3_mcp.md) |
+| 1 | 메신저 비서 구조 · OpenClaw와 Hermes 차이 · 운영 명령 · 응용 레시피 | [`advanced/1_openclaw_hermes.md`](advanced/1_openclaw_hermes.md) |
+| 2 · 2+ | n8n 워크플로 4개: 뉴스 브리핑 · 폼 회의록 정리기 · 메일 분류 + 사람 승인 · 도구를 가진 채팅 비서 | [`advanced/2_n8n_news_briefing.md`](advanced/2_n8n_news_briefing.md), [`advanced/2b_n8n_more_workflows.md`](advanced/2b_n8n_more_workflows.md) |
+| 3 | MCP 서버 꽂기 · 내가 만든 MCP 서버 · n8n과 MCP | [`advanced/3_mcp.md`](advanced/3_mcp.md) |
+| 4 | 미니 에이전트 루프 — API 키 없이 실행해 루프 · 승인 · 멈춤 장치 보기 | [`advanced/4_agent_loop/`](advanced/4_agent_loop/) |
 
 ## 막힐 때
 
