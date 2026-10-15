@@ -24,13 +24,13 @@
 
 ## ② 설치 (5~10분)
 
-**어디에 깔까:** 이 비서들은 설치된 컴퓨터에서 명령을 실행하고 파일을 읽고 쓸 수 있습니다. 강의에서는 노트북이 아니라 **따로 떼어 둔 서버**에 깔았습니다. 내 노트북에 깔 거라면 ④의 권한 테스트를 꼭 해 보고, 끝나면 ⑥대로 정리하세요.
+**어디에 깔까:** 이 비서들은 설치된 컴퓨터에서 명령을 실행하고 파일을 읽고 쓸 수 있습니다. 강의에서는 강의 PC의 Windows에 바로 깔지 않고, **Windows와 분리된 WSL Ubuntu**에 깔았습니다. Windows라면 같은 방법(관리자 PowerShell에서 `wsl --install`)을 권합니다. 내 노트북에 깔 거라면 ④의 권한 테스트를 꼭 해 보고, 끝나면 ⑥대로 정리하세요.
 
 | 방법 | Hermes Agent | OpenClaw |
 | --- | --- | --- |
 | 데스크톱 앱 (가장 쉬움) | [설치 안내](https://hermes-agent.nousresearch.com/docs/getting-started/installation/)의 데스크톱 앱 (macOS는 Apple Silicon만) | Windows: [Windows Hub](https://github.com/openclaw/openclaw-windows-node/releases/latest) · macOS: [릴리스](https://github.com/openclaw/openclaw/releases)의 `.dmg` |
 | Windows PowerShell | `iex (irm https://hermes-agent.nousresearch.com/install.ps1)` | `iwr -useb https://openclaw.ai/install.ps1 \| iex` |
-| macOS · Linux (강의에서 쓴 방법) | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh \| bash` | `curl -fsSL https://openclaw.ai/install.sh \| bash` |
+| macOS · Linux · WSL Ubuntu (강의에서 쓴 방법) | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh \| bash` | `curl -fsSL https://openclaw.ai/install.sh \| bash` |
 
 설치 명령은 인터넷에서 받은 스크립트를 바로 실행합니다. **주소가 위의 공식 주소인지 한 번 더 확인**하세요.
 
@@ -45,6 +45,7 @@ hermes setup            # 설정 마법사: 모델 공급자와 키를 고릅니
 hermes gateway setup    # 메신저 연결: Telegram을 고르고 ①의 토큰을 붙여 넣습니다
 ```
 
+- **ChatGPT를 구독 중이면** `hermes model` → 'ChatGPT or Codex Subscription'을 고르고, 화면의 주소를 열어 코드를 입력하면 API 키 없이 연결됩니다(강의에서 쓴 방법). Claude Pro 구독으로는 연결할 수 없습니다. 자세한 것은 [서비스별로 지금 되는 것](../services.md#메신저-비서-openclaw와-hermes).
 - 모델만 다시 고르려면 `hermes model`을 씁니다.
 - API 키 대신 Nous Portal을 쓰려면 `hermes setup --portal`을 씁니다.
 - 설정 마지막에 나오는 안내대로 게이트웨이를 켜면 텔레그램 봇이 답하기 시작합니다.

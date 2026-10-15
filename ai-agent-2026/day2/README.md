@@ -31,6 +31,7 @@
 | --- | --- |
 | 다른 주제로 해 보고 싶다 (뉴스 · 일정 · 메일 등 6개) | [`quickstart/`](quickstart/README.md) |
 | 강의 내용을 다시 보고 싶다 (챗봇 vs 비서, 트리거, Workflow + Agent, MCP 등) | [`concepts.md`](concepts.md) |
+| 내 서비스 · 플랜에서 프로젝트 · 예약 · 커넥터가 되는지, OpenClaw와 Hermes는 뭐가 다른지 | [`services.md`](services.md) (10월 15일 기준) |
 | 완성 카드 예시를 보고 싶다 | [`examples/scenario_examples.md`](examples/scenario_examples.md) |
 | 카드를 처음부터 직접 설계하고 싶다 | 아래 '진행 순서' |
 
