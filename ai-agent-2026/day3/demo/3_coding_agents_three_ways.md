@@ -19,6 +19,8 @@
 
 ## 공통 준비 (수업 전)
 
+Windows라면 먼저 [WSL에서 시작하는 실습 환경](../wsl_setup.md) 1~3단계를 합니다.
+
 | 확인 | 명령 · 방법 | 이렇게 나오면 OK |
 | --- | --- | --- |
 | Claude 구독 | Pro · Max · Team · Enterprise (API 키 없이 로그인) | — |

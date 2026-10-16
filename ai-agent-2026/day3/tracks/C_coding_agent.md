@@ -61,4 +61,6 @@ laptop-picker 웹앱을 만들어 줘.
 | 테스트가 실제 API를 부른다 | "테스트에서는 LLM 호출을 mock으로 바꿔 줘" |
 | 키가 코드에 들어갔다 | 바로 키를 폐기하고, "키를 환경 변수로 옮기고 .gitignore를 확인해 줘" |
 
+> **Windows에서 시작한다면:** [WSL에서 시작하는 실습 환경](../wsl_setup.md) — WSL 켜기부터 Claude Code · Codex · VS Code 연결까지.
+
 > **습관대로 만든 완성 예시:** [`../examples/news3_app/`](../examples/news3_app/README.md) — 단계마다 보낸 문장, 실패 → 통과한 테스트, 읽고 승인한 diff, 커밋 기록까지 들어 있습니다.

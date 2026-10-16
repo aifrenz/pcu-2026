@@ -4,6 +4,7 @@
 > 복사 · 프로젝트 만들기 · 새 대화가 헷갈리면 [처음 하는 분 안내 (3분)](../day2/quickstart/start_here.md)를 보세요.
 
 > 오늘 발표자료: [DAY 3 슬라이드 (PDF, 50쪽)](../slides/DAY3_slides.pdf)
+> 강의 시연(Claude Code · Codex · VS Code · 메신저 비서)을 Windows에서 따라 하려면: [WSL에서 시작하는 실습 환경](wsl_setup.md)
 
 ## 오늘 할 일
 
