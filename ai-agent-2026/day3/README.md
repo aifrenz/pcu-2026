@@ -67,6 +67,8 @@
 | 0 | 어제 못 한 메신저 연결: OpenClaw · Hermes를 디스코드로 부르고, 수업 끝에 기억 확인. 디스코드 · 왓츠앱 · 라인 단계별 설치 · 연결 안내 포함 | [`demo/0_messenger_connect.md`](demo/0_messenger_connect.md) |
 | 4 | 스킬은 들고 다닌다: Hermes가 만든 스킬을 Claude에 올리고 ChatGPT에 붙여 넣기 · 예시 스킬로 직접 해 보기 (선택) | [`demo/4_skill_portable.md`](demo/4_skill_portable.md) |
 | 3+ | Coding Agent와 일하는 습관 예시: 작은 버전 → 테스트 먼저 → diff 승인 → 커밋 → 키는 .env로 만든 '뉴스 3개' 웹앱 (실제 코드 · 테스트 · 커밋 기록) | [`examples/news3_app/`](examples/news3_app/README.md) |
+| 3+ | Coding Agent 세 가지 환경: Claude Code CLI · Codex CLI · VS Code — 같은 과제로 계획 · 테스트 루프, 검토, diff 승인 | [`demo/3_coding_agents_three_ways.md`](demo/3_coding_agents_three_ways.md) |
+| 5 | 메신저 비서가 Coding Agent를 부른다: 디스코드 한마디 → Hermes · OpenClaw가 Claude Code · Codex 실행 | [`demo/5_messenger_to_coding_agent.md`](demo/5_messenger_to_coding_agent.md) |
 | 3 | Claude Code 설치부터 첫 앱까지 (아래) | [`demo/claude_code_meeting_todo.md`](demo/claude_code_meeting_todo.md) |
 
 강사가 화면에서 Claude Code를 설치해 '회의록 정리기'를 만든 장면을 그대로 적었습니다. 트랙 C를 고른 분은 이 순서대로 하면 됩니다: [`demo/claude_code_meeting_todo.md`](demo/claude_code_meeting_todo.md)
