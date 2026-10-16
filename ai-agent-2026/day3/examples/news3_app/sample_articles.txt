@@ -1,0 +1,9 @@
+1. 10/16 · 정부, 공공기관 AI 에이전트 도입 가이드라인 초안 공개… 민원·문서 업무에 '사람 확인 단계' 의무화 · https://example.com/news/1
+2. 10/17 · "공공 AI 에이전트, 사람이 최종 확인해야" 가이드라인 초안 주요 내용 · https://example.com/news/2
+3. 10/15 · 한빛시, 민원 상담 AI 비서 3개월 시범 운영 결과… 야간 문의 40% 자동 응대 · https://example.com/news/3
+4. 10/14 · 글로벌 빅테크, 개발자용 새 코딩 에이전트 출시 · https://example.com/news/4
+5. 10/18 · AI 반도체 스타트업, 1천억 원 규모 투자 유치 · https://example.com/news/5
+6. 10/13 · 행정 데이터 200종 AI 학습용으로 추가 개방 · https://example.com/news/6
+7. 10/05 · 지자체 내년도 AI 예산 편성 현황 · https://example.com/news/7
+8. 10/17 · 연예인 AI 딥페이크 피해 신고 증가 · https://example.com/news/8
+9. 10/18 · 생성형 AI 업무 활용 개인정보 처리 안내서 개정… 공공기관도 적용 · https://example.com/news/9
