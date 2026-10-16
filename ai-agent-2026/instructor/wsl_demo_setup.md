@@ -70,7 +70,7 @@ wsl --export Ubuntu-24.04 C:\wsl\base.tar
 wsl --import openclaw    C:\wsl\openclaw    C:\wsl\base.tar
 wsl --import hermes-live C:\wsl\hermes-live C:\wsl\base.tar
 wsl -l -v                    # Ubuntu-24.04, openclaw, hermes-live 세 개가 보이면 OK
-copy C:\wsl\base.tar E:\     # E: = 내 USB. 내일 DAY 3 복제본을 빨리 만들기 위해
+copy C:\wsl\base.tar E:\     # E: = 내 USB. DAY 3 복제본을 빨리 만들기 위해
 ```
 
 복제본에 들어가기: `wsl -d openclaw`, `wsl -d hermes-live`. Windows Terminal을 쓰면 탭 이름으로도 열립니다.
@@ -174,7 +174,7 @@ PowerShell:
 ```powershell
 wsl --terminate openclaw
 wsl --terminate hermes-live
-wsl --export openclaw    E:\openclaw.tar      # 내일 DAY 3 오프닝용 (토큰이 들어 있으니 USB는 직접 보관)
+wsl --export openclaw    E:\openclaw.tar      # DAY 3 오프닝용 (토큰이 들어 있으니 USB는 직접 보관)
 wsl --export hermes-live E:\hermes-live.tar   # 수업 중 라이브 설치한 Hermes + 만든 스킬 · 기억
 wsl --unregister openclaw
 wsl --unregister hermes-live
@@ -231,4 +231,4 @@ multipass shell openclaw          # 이후 3번의 Ubuntu 명령과 같음
 | --- | --- |
 | Hermes 게이트웨이를 켜는 명령 | `hermes gateway`(앞에서) 또는 `hermes gateway install` → `start` (공식 메시징 문서에서 확인) |
 | OpenClaw 백그라운드 실행이 WSL에서 유지되는지 | systemd 설정과 '열린 터미널' 조건의 영향을 받을 수 있음 |
-| import한 복제본에서 디스코드 봇이 바로 답하는지 | 내일 오프닝이 이것에 달려 있음. 오늘 정리 전에 한 번 export → import 해 보면 가장 확실 |
+| import한 복제본에서 디스코드 봇이 바로 답하는지 | DAY 3 오프닝이 이것에 달려 있음. 오늘 정리 전에 한 번 export → import 해 보면 가장 확실 |

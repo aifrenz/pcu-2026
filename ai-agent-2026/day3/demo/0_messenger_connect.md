@@ -6,12 +6,12 @@
 
 ---
 
-## 강의 흐름 (오프닝 7분 + 마무리 2분)
+## 강의 흐름 (오프닝 10분 + 마무리 2분)
 
 | 순서 | 언제 | 하는 일 |
 | --- | --- | --- |
 | ① | 수업 전 (화면 공유 끄고) | 디스코드 봇 2개 만들기 · 토큰 메모 · 수업용 서버에 초대 (아래 1~4단계) |
-| ② | 오프닝 · 라이브 | 비서에 연결: Hermes는 `hermes gateway setup` → `hermes gateway`, OpenClaw는 `openclaw channels add` (아래 5~6단계) |
+| ② | 오프닝 · 라이브 | 비서에 연결: Hermes는 `hermes gateway setup` → `hermes gateway`, OpenClaw는 `openclaw channels add` (아래 5~6단계). **하나는 수업 전에 미리 연결해 두고, 오프닝에서는 나머지 하나만 라이브로** |
 | ③ | 오프닝 · 라이브 | 두 봇의 DM에 '브리핑 규칙'을 보내고 `브리핑` 한 번 (아래 7단계) |
 | ④ | 수업 끝 | 같은 DM 창에 `브리핑` 한 단어 → 규칙을 기억하나? Hermes 스킬 파일이 생겼나? |
 | ⑤ | 수업 뒤 | 봇 토큰 초기화 · 강의 PC의 WSL 정리 (아래 9단계) |
@@ -140,7 +140,7 @@ openclaw channels add               # 목록에서 Discord → 봇 토큰 붙여
 **방법 B · 설정 파일로 (토큰을 환경 변수에 두는 방법)**
 
 ```bash
-export DISCORD_BOT_TOKEN="여기에_봇_토큰"
+read -rs DISCORD_BOT_TOKEN && export DISCORD_BOT_TOKEN   # 토큰을 붙여 넣고 Enter (화면 · 기록에 남지 않음)
 cat > discord.patch.json5 <<'JSON5'
 {
   channels: {

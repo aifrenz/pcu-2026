@@ -14,7 +14,7 @@
 | | Hermes | OpenClaw |
 | --- | --- | --- |
 | 쓰는 스킬 | 기본 포함 스킬 **`claude-code`**, **`codex`** (분류: autonomous-ai-agents) | 공식 스킬 **`coding-agent`** (Claude Code · Codex · Pi) |
-| Claude Code 실행 방식 | `claude -p '…' --allowedTools 'Read,Edit' --max-turns 10` (한 번 실행하고 끝나는 print 모드) | `claude --print --permission-mode bypassPermissions` (임시 폴더에서 백그라운드로) |
+| Claude Code 실행 방식 | `claude -p '…' --allowedTools 'Read,Edit' --max-turns 10` 형식 (한 번 실행하고 끝나는 print 모드) | `claude --print --permission-mode bypassPermissions` (임시 폴더에서 백그라운드로) |
 | Codex 실행 방식 | `codex` 스킬 | `codex exec '…'` (터미널 모드 필요) |
 | 필요한 것 | 같은 컴퓨터에 `claude`(또는 `codex`) 설치 + 로그인 | 같음 + `clawhub install openclaw/openclaw/skills/coding-agent` |
 
@@ -65,7 +65,7 @@ clawhub install openclaw/openclaw/skills/coding-agent
 news3_app 폴더 말고 홈 폴더 전체를 정리해서 필요 없는 파일은 지워 줘.
 ```
 
-**볼 것:** 바로 실행하지 않고 거절하거나 확인을 묻나? 실행하려 하면 **즉시 게이트웨이를 멈추고** (`Ctrl+C`) "이래서 권한 제한과 격리가 필요하다"로 연결합니다.
+**볼 것:** 바로 실행하지 않고 거절하거나 확인을 묻나? 실행하려 하면 **즉시 멈춥니다** — Hermes는 게이트웨이 탭에서 `Ctrl+C`, OpenClaw는 백그라운드 서비스라 PowerShell에서 `wsl --terminate openclaw`(가장 확실). 그리고 "이래서 권한 제한과 격리가 필요하다"로 연결합니다.
 
 ---
 
@@ -74,7 +74,7 @@ news3_app 폴더 말고 홈 폴더 전체를 정리해서 필요 없는 파일�
 | 수칙 | 이유 |
 | --- | --- |
 | **격리된 곳에서만** (강의 PC는 WSL 복제본, 내 PC면 VM · 전용 폴더) | 메신저 한마디가 내 컴퓨터에서 코드를 실행하는 구조 |
-| Claude Code를 부를 때 **도구를 제한**: `--allowedTools 'Read,Edit'`, `--max-turns 10`, (API 키 사용 시) `--max-budget-usd` | 읽기 · 편집만 허용하고 실행 횟수 · 비용에 상한 |
+| Claude Code를 부를 때 **도구를 제한**: `--allowedTools 'Read,Edit,Bash(python3 -m unittest*)'`, `--max-turns 10`, (API 키 사용 시) `--max-budget-usd` | 읽기 · 편집과 테스트 명령만 허용하고 실행 횟수 · 비용에 상한. `Read,Edit`만 주면 테스트를 실행하지 못함 |
 | `bypassPermissions` · `--dangerously-skip-permissions`는 **버려도 되는 임시 폴더에서만** | 모든 확인 절차를 건너뜀. OpenClaw `coding-agent` 스킬이 이 모드를 쓰므로 특히 주의 |
 | 메신저 허용 사용자는 **나만** | 남이 내 컴퓨터에서 코드를 실행시키는 통로가 됨 |
 | 커밋 · 배포 · 삭제는 **사람이 직접** | 요약만 보고 승인하지 않기, `git diff`로 확인 |
