@@ -1,4 +1,4 @@
-# 장면 0 · 어제 못 한 메신저 연결 — 디스코드로 비서 부르기
+# 장면 0 · 어제 못 한 메신저 연결 — 디스코드 · 왓츠앱 · 라인
 
 어제(DAY 2) 강의에서는 OpenClaw · Hermes를 **메신저와 연결하는 데까지 가지 못했습니다.** 오늘 오프닝에서 강사가 **디스코드(무료)** 로 연결하는 장면을 라이브로 보여 주고, 수업이 끝날 때 같은 비서에게 다시 말을 걸어 **기억**을 확인합니다.
 
@@ -21,6 +21,16 @@
 ---
 
 # 자세한 설치 · 연결 방법
+
+세 메신저 모두 **OpenClaw · Hermes 둘 다** 연결할 수 있습니다. 하나만 고르면 됩니다.
+
+| 메신저 | 비용 | 공개 주소 | 난이도 · 시간 | 바로 가기 |
+| --- | --- | --- | --- | --- |
+| **디스코드 (추천)** | 무료 | 필요 없음 | 쉬움 · 40분 | 아래 1~9단계 |
+| **왓츠앱** | 무료 | 필요 없음 | 보통 · 20분 (전용 번호 권장) | [왓츠앱으로 연결하기](#왓츠앱으로-연결하기) |
+| **라인** | 답장 무료 · 먼저 보내기는 월 한도 | **필요 (터널)** | 어려움 · 40분 | [라인으로 연결하기](#라인으로-연결하기-openclaw--hermes-모두-가능) |
+
+# 디스코드로 연결하기
 
 ```
 1 디스코드 설치 · 가입 → 2 내 서버 만들기 → 3 개발자 모드 · 내 ID → 4 봇 만들기 · 초대
@@ -203,24 +213,7 @@ openclaw pairing approve discord ABCD2345  # 내 요청이 맞으면 코드로 �
 
 ---
 
-## 디스코드 대신 왓츠앱으로
-
-전화번호로 쓰는 왓츠앱에 붙이고 싶다면 **QR로 기기를 연결**합니다. 비즈니스 계정 · 유료 API는 필요 없습니다.
-
-1. **번호 정하기:** 두 도구 문서 모두 **비서 전용 번호를 따로** 쓰라고 권합니다. 왓츠앱은 공식 비즈니스 API 밖의 봇을 지원하지 않아 계정이 제한될 작은 위험이 있습니다. 내 번호로 시험만 할 때는 '나와의 대화(self-chat)' 모드를 고릅니다.
-2. **연결 명령**
-   - Hermes: `hermes whatsapp` → 모드(bot / self-chat) 선택 → 터미널에 QR 표시 (Node.js 18 이상 필요)
-   - OpenClaw: `openclaw channels login --channel whatsapp` → QR 표시 (처음이면 플러그인 설치를 물어봄)
-3. **휴대폰:** 왓츠앱 **설정 → 연결된 기기 → 기기 연결** → 터미널의 QR을 바로 스캔 (QR은 금방 만료됨)
-4. **허용 사용자:** Hermes는 `~/.hermes/.env`에 `WHATSAPP_ALLOWED_USERS=8210xxxxxxxx` (국가번호 포함, `+` 없이). OpenClaw는 `allowFrom`에 내 번호, 모르는 번호는 `openclaw pairing approve whatsapp <코드>`
-5. **켜기:** `hermes gateway` / `openclaw gateway status`
-6. **끝내기:** 휴대폰 **연결된 기기**에서 해당 기기 로그아웃. 세션 파일(Hermes `~/.hermes/platforms/whatsapp/session`)은 내 왓츠앱 계정 전체 권한과 같으니 지웁니다.
-
-라인은 공개 HTTPS 주소(웹훅)가 필요해 처음 하는 분께는 권하지 않습니다 → [메신저 연결 안내 · 라인](../../day2/advanced/messengers.md#라인-어려움)
-
----
-
-## 막힐 때
+## 디스코드 막힐 때
 
 | 이럴 때 | 원인 · 해결 |
 | --- | --- |
@@ -234,4 +227,250 @@ openclaw pairing approve discord ABCD2345  # 내 요청이 맞으면 코드로 �
 | 토큰이 화면에 노출됐다 | 바로 **Reset Token** → 새 토큰으로 5~6단계 다시 |
 | 학교 · 회사 망에서 연결이 끊긴다 | 휴대폰 핫스팟으로 바꿔 본다 |
 
-출처 (2026년 10월 16일 확인): [Hermes 메시징](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/) · [Hermes Discord](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/discord) · [Hermes WhatsApp](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/whatsapp) · [OpenClaw Discord 설정](https://docs.openclaw.ai/channels/discord/setup) · [OpenClaw Discord 접근 제어](https://docs.openclaw.ai/channels/discord/access-control) · [OpenClaw 짝 맞추기](https://docs.openclaw.ai/channels/pairing) · [OpenClaw WhatsApp](https://docs.openclaw.ai/channels/whatsapp)
+---
+
+# 왓츠앱으로 연결하기
+
+전화번호로 쓰는 왓츠앱에 붙입니다. 왓츠앱 웹처럼 **QR로 기기를 연결**하는 방식이라 비즈니스 계정 · 유료 API가 필요 없고, **공개 주소도 필요 없습니다.** 처음 하는 분 기준 약 20분.
+
+```
+W1 번호 정하기 → W2 왓츠앱 설치 · 가입 → W3 (Hermes만) Node.js → W4 QR 연결 → W5 허용 번호 → W6 켜기 · 첫 대화 → W7 끝내기
+```
+
+## W1 · 번호 정하기 (중요)
+
+| 방식 | 어떻게 쓰나 | 권장 |
+| --- | --- | --- |
+| **비서 전용 번호 (bot)** | 남는 휴대폰 · 두 번째 번호로 왓츠앱 계정을 하나 더 만들고, 내 왓츠앱에서 그 번호로 메시지를 보냄 | **두 도구 문서 모두 권장** |
+| **내 번호 · 나와의 대화 (self-chat)** | 내 왓츠앱의 '나에게 보내기' 대화창에서 비서에게 말을 검 | 빠르게 시험만 할 때 |
+
+왓츠앱은 공식 비즈니스 API 밖의 봇을 지원하지 않아 **계정이 제한될 작은 위험**이 있습니다. 그래서 전용 번호를 권하고, 여러 사람에게 먼저 보내는 자동 메시지는 하지 않습니다.
+
+## W2 · 왓츠앱 설치와 가입
+
+1. 휴대폰에 **WhatsApp**을 설치하고 전화번호로 가입합니다 (문자 인증).
+2. 전용 번호를 쓴다면 그 번호로 가입한 휴대폰이 필요합니다. 연결(W4)할 때 그 휴대폰으로 QR을 찍습니다.
+
+## W3 · (Hermes만) Node.js 확인
+
+Hermes의 왓츠앱 연결은 Node.js 18 이상이 필요합니다.
+
+```bash
+node -v      # v18 이상이면 OK. 없으면: nvm install 22
+```
+
+## W4 · QR 연결
+
+**Hermes**
+
+```bash
+hermes whatsapp      # 모드 선택(bot / self-chat) → 필요한 구성 요소 설치 → 터미널에 QR 표시
+```
+
+**OpenClaw**
+
+```bash
+openclaw channels login --channel whatsapp     # 처음이면 WhatsApp 플러그인 설치를 물어봄 → QR 표시
+```
+
+**휴대폰에서:** 왓츠앱 **설정 → 연결된 기기 → 기기 연결** → 터미널의 QR을 **바로** 스캔합니다.
+
+- QR은 금방 만료됩니다. 만료되면 명령을 다시 실행해 새 QR을 찍습니다.
+- 터미널 글꼴이 작거나 창이 좁으면 QR이 깨져 보입니다. 터미널 창을 키우고 글꼴을 줄여 QR 전체가 보이게 합니다.
+- 휴대폰의 '연결된 기기' 목록에 새 기기가 보이면 성공입니다.
+
+## W5 · 허용 번호 정하기
+
+**Hermes** — `~/.hermes/.env`
+
+```
+WHATSAPP_ENABLED=true
+WHATSAPP_MODE=bot                     # 내 번호로 시험이면 self-chat
+WHATSAPP_ALLOWED_USERS=821012345678   # 비서에게 말을 걸 내 번호. 국가번호 포함, + 와 - 없이
+```
+
+허용 번호가 비어 있으면 아무에게도 답하지 않습니다. `*`(모두 허용)는 쓰지 않습니다.
+
+**OpenClaw** — 처음 설정에서 내 번호를 넣거나, 모르는 번호가 보내면 오는 코드를 승인합니다.
+
+```bash
+openclaw pairing list whatsapp
+openclaw pairing approve whatsapp <코드>
+```
+
+설정 파일로 정한다면 `allowFrom`에 `+821012345678`처럼 **`+`를 붙인 국제 형식**으로 넣습니다. 내 번호(self-chat) 모드로 설정하면 OpenClaw가 `dmPolicy: "allowlist"`와 내 번호를 자동으로 넣습니다.
+
+## W6 · 켜기와 첫 대화
+
+```bash
+hermes gateway                 # Hermes
+openclaw gateway status        # OpenClaw (안 돌면 openclaw gateway)
+openclaw channels status --probe
+```
+
+- **전용 번호(bot):** 내 왓츠앱에서 비서 번호를 연락처에 저장하고 메시지를 보냅니다.
+- **나와의 대화(self-chat):** 내 왓츠앱에서 '나에게 보내기' 대화창에 보냅니다.
+- `안녕, 너는 누구야?` → 답이 오면 성공. 이어서 7단계의 '브리핑 규칙'을 보냅니다.
+
+## W7 · 끝내기
+
+1. 휴대폰 왓츠앱 **설정 → 연결된 기기** → 비서 기기를 눌러 **로그아웃**
+2. 세션 파일 지우기: 이 파일은 **내 왓츠앱 계정 전체 권한**과 같습니다. Hermes는 `~/.hermes/platforms/whatsapp/session` 폴더를 지웁니다. 강의 PC라면 WSL을 통째로 지우면 함께 사라집니다.
+3. 게이트웨이 끄기: `hermes gateway stop` 등
+
+## 왓츠앱 막힐 때
+
+| 이럴 때 | 이렇게 |
+| --- | --- |
+| QR이 깨져 보이거나 인식이 안 됨 | 터미널 창을 키우고 글꼴을 줄인 뒤 명령을 다시 실행 |
+| QR이 만료됨 | 명령을 다시 실행해 새 QR을 바로 스캔 |
+| 연결은 됐는데 답이 없음 | Hermes `WHATSAPP_ALLOWED_USERS`에 내 번호가 `+` 없이 들어 있는지, OpenClaw는 짝 맞추기 승인을 했는지 |
+| 한동안 잘 되다가 끊김 | 왓츠앱 업데이트로 연결 방식이 바뀌었을 수 있음. 비서를 업데이트(`hermes update` / `openclaw update`)하고 다시 연결 |
+| 계정 경고 · 제한 | 바로 연결된 기기에서 로그아웃. 전용 번호로 바꾸고, 먼저 보내는 자동 메시지는 하지 않기 |
+
+---
+
+# 라인으로 연결하기 (OpenClaw · Hermes 모두 가능)
+
+**OpenClaw도 라인을 지원합니다** (공식 플러그인 `@openclaw/line`). Hermes도 지원합니다. 다만 라인은 디스코드 · 왓츠앱과 달리 **라인 서버가 내 비서에게 메시지를 보내 주는 방식(웹훅)** 이라, 내 비서에 **공개 HTTPS 주소**가 있어야 합니다. 노트북 · WSL에서는 **터널** 프로그램으로 주소를 엽니다. 처음 하는 분 기준 약 40분.
+
+```
+L1 라인 공식 계정 만들기 → L2 Messaging API 켜기 → L3 토큰 · 시크릿 복사 → L4 비서 설정
+→ L5 터널로 공개 주소 열기 → L6 웹훅 주소 등록 · 검증 → L7 친구 추가 · 첫 대화 → L8 허용 사용자 → L9 끝내기
+```
+
+## L1 · 라인 공식 계정(LINE Official Account) 만들기
+
+라인은 이제 Developers 콘솔에서 채널을 바로 만들 수 없고, **공식 계정을 먼저 만든 뒤 Messaging API를 켜는** 순서입니다.
+
+1. [LINE Official Account Manager](https://manager.line.biz/)에서 **LINE 계정 또는 Business ID**로 가입합니다.
+2. **새 계정 만들기** → 계정 이름(예: `내 비서 실습`) · 업종 · 국가 등 입력 → 만들기
+3. 무료 플랜으로 시작합니다. 가입 가능한 국가 · 업종은 라인 정책에 따라 다를 수 있습니다.
+
+## L2 · Messaging API 켜기
+
+1. Official Account Manager에서 만든 계정 → 오른쪽 위 **설정** → **Messaging API** → **Messaging API 사용**
+2. **Provider**(만든 사람 이름표)를 고르거나 새로 만듭니다. **한 번 정하면 바꿀 수 없으니** 내 이름 · 실습용 이름으로 정합니다.
+3. 같은 설정의 **응답 설정**에서 **자동 응답 메시지**와 **인사 메시지**를 끕니다 (비서 대신 라인이 자동으로 답하지 않게).
+
+## L3 · 토큰과 시크릿 복사
+
+[LINE Developers 콘솔](https://developers.line.biz/console/) → 내 Provider → 만든 채널
+
+1. **Basic settings** 탭 → **Channel secret** 복사
+2. **Messaging API** 탭 → 맨 아래 **Channel access token (long-lived)** → **Issue** → 복사
+3. 메모장에 저장합니다. 둘 다 **비밀번호와 같습니다.**
+4. 같은 **Messaging API** 탭 위쪽의 **QR 코드**는 L7에서 친구 추가할 때 씁니다.
+
+## L4 · 비서에 설정
+
+**Hermes** — `hermes gateway setup`에서 LINE을 고르거나, `~/.hermes/.env`에 직접 넣습니다.
+
+```
+LINE_CHANNEL_ACCESS_TOKEN=여기에_채널_액세스_토큰
+LINE_CHANNEL_SECRET=여기에_채널_시크릿
+LINE_ALLOWED_USERS=                   # L8에서 내 사용자 ID(U로 시작)를 넣음
+LINE_PORT=8646                        # 기본값
+```
+
+`~/.hermes/config.yaml`에서 라인을 켭니다 (`hermes gateway setup`으로 했다면 이미 켜져 있음).
+
+```yaml
+gateway:
+  platforms:
+    line:
+      enabled: true
+```
+
+그다음 `hermes gateway`로 켭니다. Hermes의 라인 웹훅은 **`http://localhost:8646/line/webhook`** 에서 기다립니다.
+
+**OpenClaw**
+
+```bash
+openclaw plugins install @openclaw/line
+export LINE_CHANNEL_ACCESS_TOKEN="여기에_채널_액세스_토큰"
+export LINE_CHANNEL_SECRET="여기에_채널_시크릿"
+```
+
+설정 파일로 정한다면 `channels.line`에 `enabled: true`, `channelAccessToken`, `channelSecret`, `dmPolicy: "pairing"`(기본값)을 넣습니다. 백그라운드 서비스로 돌린다면 두 값을 `~/.openclaw/.env`에 넣습니다. OpenClaw의 라인 웹훅은 **게이트웨이 주소의 `/line/webhook`** 입니다. 게이트웨이 포트는 `openclaw gateway status`로 확인합니다.
+
+## L5 · 터널로 공개 주소 열기
+
+라인 서버가 내 노트북 · WSL에 들어올 수 있도록 임시 공개 주소를 엽니다. 하나만 고르면 됩니다.
+
+```bash
+# Cloudflare 임시 터널 (가입 없이, 실행할 때마다 주소가 바뀜)
+cloudflared tunnel --url http://localhost:8646      # Hermes. OpenClaw는 게이트웨이 포트로
+
+# 또는 ngrok (무료 가입 후)
+ngrok http 8646
+```
+
+터미널에 `https://….trycloudflare.com` 또는 `https://….ngrok-free.app` 같은 주소가 나옵니다. **이 터미널은 시험하는 동안 계속 열어 둡니다.** 닫으면 주소가 사라집니다.
+
+- `cloudflared` · `ngrok` 설치 방법은 각 공식 사이트를 따릅니다 (WSL Ubuntu에서는 리눅스용 설치 안내).
+- 임시 주소는 실행할 때마다 바뀌므로, 바뀌면 L6을 다시 합니다.
+- **공개 주소는 누구나 접속을 시도할 수 있는 주소입니다.** 라인은 Channel secret으로 서명을 확인하고, 허용 사용자(L8)가 있어야 비서가 답하지만, 시험이 끝나면 터널을 바로 닫습니다.
+
+## L6 · 웹훅 주소 등록과 검증
+
+1. LINE Developers 콘솔 → 채널 → **Messaging API** 탭 → **Webhook URL** → **Edit**
+2. `https://L5에서_나온_주소/line/webhook` 을 넣고 **Update**
+3. **Verify** → `Success`가 나오면 성공
+4. **Use webhook**을 켭니다
+
+Hermes는 브라우저나 터미널에서 `https://L5_주소/line/webhook/health`를 열어 `{"status":"ok","platform":"line"}`이 나오는지로도 확인할 수 있습니다.
+
+## L7 · 친구 추가와 첫 대화
+
+1. 휴대폰 라인 앱에서 L3의 **QR 코드**를 스캔하거나 공식 계정 ID를 검색해 **친구 추가**
+2. `안녕, 너는 누구야?` 를 보냅니다
+3. 이 단계에서는 아직 답이 없을 수 있습니다. 허용 사용자를 정하지 않았기 때문입니다 → L8
+
+## L8 · 허용 사용자 정하기
+
+라인 사용자 ID는 화면에 보이는 라인 ID가 아니라 **`U`로 시작하는 33자리 문자열**입니다.
+
+**Hermes:** L7에서 보낸 메시지가 '허용되지 않은 사용자'로 기록되어 있으니, 로그에서 ID를 찾습니다.
+
+```bash
+grep "LINE: rejecting unauthorized source" ~/.hermes/logs/gateway.log
+```
+
+나온 `U…` ID를 `~/.hermes/.env`의 `LINE_ALLOWED_USERS=U…`에 넣고 게이트웨이를 다시 켭니다 (`Ctrl+C` 후 `hermes gateway`). `LINE_ALLOW_ALL_USERS=true`는 개발 시험용이라 쓰지 않습니다.
+
+**OpenClaw:** 기본값이 짝 맞추기라, L7의 메시지에 코드가 옵니다.
+
+```bash
+openclaw pairing list line
+openclaw pairing approve line <코드>
+```
+
+이제 다시 메시지를 보내면 답이 옵니다. 7단계의 '브리핑 규칙'을 보내 봅니다.
+
+## L9 · 끝내기
+
+1. 터널 터미널을 `Ctrl+C`로 닫습니다 (공개 주소가 사라짐)
+2. LINE Developers 콘솔에서 **Channel access token 재발급**(기존 토큰 무효화), 필요하면 **Use webhook** 끄기
+3. 계속 쓰지 않으면 Official Account Manager에서 공식 계정 삭제
+4. 게이트웨이 끄기 · 강의 PC라면 WSL 정리
+
+## 라인 비용과 제한
+
+- 내가 말을 걸고 비서가 **답하는 메시지(reply)** 는 무료입니다. Hermes는 먼저 무료 답장 방식으로 보내고, 답이 1분쯤 넘게 걸리면 **먼저 보내는 메시지(push)** 로 바꿉니다.
+- **push 메시지는 공식 계정 플랜의 월 한도**에 포함됩니다 (무료 플랜은 한도가 작음). 예약 브리핑처럼 비서가 먼저 보내는 일은 한도를 확인하세요.
+- 라인 화면에서는 굵게 · 제목 같은 마크다운이 기호 그대로 보입니다. 지시문에 "마크다운 없이 짧은 문장으로"를 넣으면 깔끔합니다.
+
+## 라인 막힐 때
+
+| 이럴 때 | 이렇게 |
+| --- | --- |
+| Developers 콘솔에서 채널을 만들 수 없다 | 정상입니다. L1 · L2처럼 Official Account Manager에서 공식 계정 → Messaging API 켜기 순서로 |
+| Verify가 실패한다 | 터널이 켜져 있는지, 주소가 `https`이고 끝이 `/line/webhook`인지, 비서 게이트웨이가 켜져 있는지, 터널이 가리키는 포트가 맞는지 |
+| 친구 추가는 됐는데 답이 없다 | 허용 사용자(L8)를 넣었는지. 라인의 **자동 응답**이 대신 답하고 있다면 L2-3에서 끄기 |
+| 어제는 됐는데 오늘 안 된다 | 임시 터널 주소가 바뀜 → L5 · L6 다시 |
+| 답이 기호(**, #)로 지저분하다 | 지시문에 "마크다운 없이"를 추가 |
+
+---
+
+출처 (2026년 10월 16일 확인): [Hermes LINE](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/line) · [OpenClaw LINE](https://docs.openclaw.ai/channels/line) · [LINE Messaging API 시작하기](https://developers.line.biz/en/docs/messaging-api/getting-started/) · [Hermes 메시징](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/) · [Hermes Discord](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/discord) · [Hermes WhatsApp](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/whatsapp) · [OpenClaw Discord 설정](https://docs.openclaw.ai/channels/discord/setup) · [OpenClaw Discord 접근 제어](https://docs.openclaw.ai/channels/discord/access-control) · [OpenClaw 짝 맞추기](https://docs.openclaw.ai/channels/pairing) · [OpenClaw WhatsApp](https://docs.openclaw.ai/channels/whatsapp)
