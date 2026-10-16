@@ -188,7 +188,7 @@ wsl -l -v                                 # 아무것도 없으면 OK
 - [ ] 브라우저에서 디스코드 · Claude 로그아웃, 시크릿 창 닫기
 - [ ] (WSL을 처음 설치했다면) 센터 담당자에게 WSL 기능을 남겨 두어도 되는지 확인
 
-## 6. 내일 DAY 3 시작 전 (15분)
+## 6. DAY 3 시작 전 (30분)
 
 ```powershell
 mkdir C:\wsl
@@ -197,11 +197,14 @@ wsl --import hermes-live C:\wsl\hermes-live E:\hermes-live.tar
 wsl --import cc-live     C:\wsl\cc-live     E:\base.tar      # Claude Code 라이브 설치용 깨끗한 복제본
 ```
 
-- [ ] `wsl -d openclaw` → `openclaw gateway status` (꺼져 있으면 게이트웨이 켜기) → 디스코드 답 확인
-- [ ] `wsl -d hermes-live` → `hermes gateway` → 디스코드 답 확인. 두 터미널 탭은 오프닝이 끝날 때까지 열어 둠
-- [ ] 오프닝: 두 봇에게 "어제 무엇을 부탁받았지?" → 비교 기록표 '기억' 칸 확인
+DAY 2에서 메신저 연결을 하지 못했으므로, 오늘 오프닝에서 **디스코드 연결을 라이브로** 보여 줍니다 → [장면 0 · 메신저 연결](../day3/demo/0_messenger_connect.md)
+
+- [ ] (USB 백업이 없으면) 1~3번대로 `openclaw` · `hermes-live`를 다시 설치해 두기. 모델 연결까지만, 메신저는 오프닝에서
+- [ ] **수업 전, 화면 공유 없이:** Discord Developer Portal에서 봇 2개(`demo-hermes`, `demo-openclaw`) 만들기 → 토큰 메모 · Message Content Intent 켜기 · 수업용 서버에 초대 · 내 사용자 ID 복사
+- [ ] 리허설: 한 봇만 미리 연결해 DM 답이 오는지 확인한 뒤, 오프닝에서는 나머지 하나를 라이브로 연결 (둘 다 라이브로 하면 시간이 빠듯)
+- [ ] 오프닝 (10분): 연결 → 두 봇에 '브리핑 규칙' 메시지 → `브리핑` 한 번. 게이트웨이 탭 두 개는 **수업 끝까지** 열어 둠
+- [ ] 마무리 (2분): 같은 DM 창에 `브리핑` 한 단어 → 기억 확인 · Hermes 스킬 폴더 확인
 - [ ] Claude Code 라이브 설치는 `wsl -d cc-live`에서 ([장면 3](../day3/demo/claude_code_meeting_todo.md)). 로그인은 시크릿 창에서
-- [ ] 어제 텔레그램으로 연결했다면 오프닝 전에 디스코드 채널을 추가합니다 (Hermes `hermes gateway setup`, OpenClaw `openclaw channels add`). 메모리 · 스킬 파일은 채널과 상관없이 남아 있으니 '기억' 확인은 그대로 됩니다. 다만 대화 기록은 채널별이라, 질문은 "어제 내가 맡긴 일이 뭐였지?"처럼 메모리를 묻는 말로 합니다.
 - [ ] 수업 뒤 5번과 같은 방법으로 정리하고, **봇 토큰 두 개(Developer Portal → Reset Token)와 API 키를 폐기**
 
 ---

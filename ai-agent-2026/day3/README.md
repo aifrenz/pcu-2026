@@ -11,7 +11,7 @@
 
 준비물은 노트북과 AI 계정 하나(무료 가능)뿐입니다. 미완성이어도 어디까지 됐는지 제출합니다.
 
-> **수업 시작 때:** 어제 강사가 설치한 비서에게 "어제 무엇을 부탁받았지?"를 물어, 비서가 기억하는지 함께 확인합니다. 보기만 하면 됩니다.
+> **수업 시작 때 · 어제 못 한 메신저 연결:** 강사가 OpenClaw · Hermes를 **디스코드**(무료)에 연결해 일을 맡기고, 수업이 끝날 때 같은 비서에게 다시 말을 걸어 **기억하는지** 확인합니다. 보기만 하면 됩니다 → [장면 0 · 메신저 연결](demo/0_messenger_connect.md)
 
 **트랙**은 '만드는 방법'입니다. 오늘은 **A0(AI 채팅 화면에서 만들기)** 만 하면 됩니다. A · B · C는 시간이 남는 분이나 개발 경험자용입니다.
 
@@ -61,6 +61,11 @@
 | C 심화 | 개발 경험자 | 웹앱 + API·MCP 연결 | Claude Code 등 Coding Agent | [`tracks/C_coding_agent.md`](tracks/C_coding_agent.md) |
 
 ## 강의 시연 따라 하기
+
+| 장면 | 내용 | 파일 |
+| --- | --- | --- |
+| 0 | 어제 못 한 메신저 연결: OpenClaw · Hermes를 디스코드로 부르고, 수업 끝에 기억 확인 (왓츠앱 · 라인은 [메신저 연결 안내](../day2/advanced/messengers.md)) | [`demo/0_messenger_connect.md`](demo/0_messenger_connect.md) |
+| 3 | Claude Code 설치부터 첫 앱까지 (아래) | [`demo/claude_code_meeting_todo.md`](demo/claude_code_meeting_todo.md) |
 
 강사가 화면에서 Claude Code를 설치해 '회의록 정리기'를 만든 장면을 그대로 적었습니다. 트랙 C를 고른 분은 이 순서대로 하면 됩니다: [`demo/claude_code_meeting_todo.md`](demo/claude_code_meeting_todo.md)
 
