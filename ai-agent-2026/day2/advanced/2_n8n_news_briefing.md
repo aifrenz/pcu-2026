@@ -9,6 +9,8 @@ Schedule Trigger → RSS Read → Code(목록 묶기) → AI Agent(+ Chat Model)
 
 아래 순서대로 **노드를 직접 만들며 확인**합니다.
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../../day3/wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. Ubuntu 창에서 `GENERIC_TIMEZONE=Asia/Seoul npx n8n`을 실행하고, Windows 브라우저에서 `http://localhost:5678`을 엽니다.
+
 ## 0. 준비
 
 n8n을 띄우는 방법은 세 가지입니다. 위에서부터 되는 것 하나만 하면 됩니다.

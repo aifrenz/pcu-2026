@@ -34,10 +34,11 @@
 
 | 순서 | 단계 | 할 일 | 파일 |
 | --- | --- | --- | --- |
+| 0 | (Windows · 코드 트랙 · 시연 따라 하기만) 실습 환경 | WSL 켜기 → 기본 도구 → 예시 실행 → Claude Code · Codex CLI → VS Code → (선택) 메신저 비서. **기본 트랙 A0은 필요 없음** | [`wsl_setup.md`](wsl_setup.md) |
 | 1 | 설계 캔버스 | 시나리오 카드를 5칸으로 줄이기 + 테스트 입력 두 개 정하기 | [`design_canvas.md`](design_canvas.md) |
 | 2 | 트랙별 제작 | A0·A·B·C 중 하나 (중간에 'AI 판단이 한 번이라도 돌았나' 점검) | [`tracks/`](tracks/) |
 | 3 | 안전 · 데모 준비 | 체크리스트 5문항 + 2분 데모 연습 | [`worksheets/safety_checklist.md`](worksheets/safety_checklist.md) |
-| 4 | 제출 | 데모 링크·화면 | [`worksheets/demo_and_submit.md`](worksheets/demo_and_submit.md) |
+| 4 | 제출 | Form 4문항 (A0은 AI 답 붙여 넣기) | [`worksheets/demo_and_submit.md`](worksheets/demo_and_submit.md) |
 
 ## 완성 예시 고르기
 

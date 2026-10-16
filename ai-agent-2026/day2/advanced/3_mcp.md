@@ -13,6 +13,8 @@ MCP(Model Context Protocol)는 **AI 앱에 새 도구를 꽂는 표준 규격**�
 
 ---
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../../day3/wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. **A(Claude Desktop)** 는 Windows 앱이라 Windows의 Node.js로 서버를 띄웁니다(WSL과 별개). WSL에서 하려면 **B(Claude Code에 꽂기)** 와 **C(내가 만든 서버)** 를 Ubuntu 창에서 합니다.
+
 ## 0. 한 장으로 보는 MCP
 
 ```mermaid

@@ -11,6 +11,8 @@ Form Trigger (입력) → AI Agent + Chat Model (판단) → 결과 응답 / 메
   - 회사·학교 노트북이라 설치가 막히면 [n8n Cloud](https://n8n.io/) 체험 계정을 씁니다. 화면과 노드는 같습니다.
   - 이미 Docker를 쓰는 분은 `docker run -it --rm -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n`
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. n8n은 WSL의 Ubuntu 창에서 `GENERIC_TIMEZONE=Asia/Seoul npx n8n`으로 띄우고, Windows 브라우저에서 `http://localhost:5678`을 엽니다.
+
 ## 순서
 
 1. **Form Trigger** 노드로 입력 칸을 만듭니다 (캔버스의 '입력').

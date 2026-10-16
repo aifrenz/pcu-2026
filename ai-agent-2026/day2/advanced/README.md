@@ -4,6 +4,8 @@
 
 > **Docker Desktop은 필요 없습니다.** 모든 과제가 앱이나 명령 한 줄로 설치됩니다.
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../../day3/wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. 심화 1~4의 명령은 모두 WSL의 Ubuntu 창에서 그대로 칠 수 있습니다 (MCP의 Claude Desktop만 Windows 앱).
+
 ## 지도
 
 ```

@@ -8,6 +8,8 @@
 
 ---
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. 아래 ②의 **macOS · Linux 설치 명령을 Ubuntu 창에서** 칩니다 (Windows PowerShell 설치도 되지만 강의 화면과 같은 명령을 쓰려면 WSL). 앱을 띄운 뒤 Windows 브라우저에서 `http://127.0.0.1:8000`을 엽니다.
+
 ## ① 준비 (5분)
 
 | 확인 | 명령 | 이렇게 나오면 OK |

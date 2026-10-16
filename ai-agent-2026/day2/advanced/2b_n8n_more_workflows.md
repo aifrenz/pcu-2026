@@ -15,6 +15,8 @@
 
 ---
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../../day3/wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. n8n은 WSL의 Ubuntu 창에서 `GENERIC_TIMEZONE=Asia/Seoul npx n8n`으로 띄우고, Windows 브라우저에서 `http://localhost:5678`을 엽니다.
+
 ## W1 · 폼으로 받는 회의록 정리기 (사건 트리거)
 
 ```

@@ -6,6 +6,8 @@
 
 > **강의에서 본 장면을 그대로 따라 하려면** [`../demo/1_hermes_openclaw.md`](../demo/1_hermes_openclaw.md)의 메시지 6개(일 맡기기 → 실행 → 피드백 → 기억 확인 → 안전 테스트 → 권한 테스트)를 쓰세요. 이 파일은 구조 · 차이 · 운영 · 응용을 다룹니다.
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../../day3/wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. 설치 표의 **macOS · Linux 명령을 WSL의 Ubuntu 창에서** 그대로 칩니다. 비서 전용 WSL을 따로 만드는 방법은 그 문서 6단계에 있습니다.
+
 ## 메신저 비서는 어떻게 생겼나
 
 ```mermaid
@@ -49,6 +51,7 @@ flowchart LR
 | **데스크톱 앱 (추천)** | Windows: [Windows Hub 설치 파일](https://github.com/openclaw/openclaw-windows-node/releases/latest) · macOS: [릴리스](https://github.com/openclaw/openclaw/releases)의 `.dmg` | [Hermes 설치 안내](https://hermes-agent.nousresearch.com/docs/getting-started/installation/)의 데스크톱 앱 (macOS는 Apple Silicon만) |
 | 설치 명령 (Windows PowerShell) | `iwr -useb https://openclaw.ai/install.ps1 \| iex` | `iex (irm https://hermes-agent.nousresearch.com/install.ps1)` |
 | 설치 명령 (macOS · Linux) | `curl -fsSL https://openclaw.ai/install.sh \| bash` | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh \| bash` |
+| 설치 명령 (WSL Ubuntu · Windows 권장) | `curl -fsSL https://openclaw.ai/install.sh \| bash` | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh \| bash` |
 | Docker (이미 쓰는 분) | [OpenClaw 설치 문서](https://docs.openclaw.ai/install)의 Docker 안내 | [Hermes 설치 안내](https://hermes-agent.nousresearch.com/docs/getting-started/installation/) 참고 |
 
 - 설치 명령은 인터넷에서 받은 스크립트를 바로 실행합니다. **주소가 위의 공식 주소인지 한 번 더 확인**하세요.

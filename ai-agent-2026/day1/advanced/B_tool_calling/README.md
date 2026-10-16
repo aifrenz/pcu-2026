@@ -14,6 +14,8 @@ AI는 도구를 직접 실행하지 않습니다. **어떤 도구를, 어떤 값
 | ② 실제 API | Python + API 키 (지출 상한 설정) | 실제 모델이 고르는 도구와 값 |
 | ③ 구독만으로 | Claude Pro·Max 또는 ChatGPT 구독 | Coding Agent가 실제로 부르는 도구 호출 |
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../../../day3/wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. 아래 `python3` 명령과 API 키 설정(`export …`)은 Ubuntu 창에서 그대로 칩니다.
+
 ## ① 모의 실행 (API 키 없이)
 
 ```bash

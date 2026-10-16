@@ -11,6 +11,8 @@ Schedule Trigger → RSS Read → Code(목록 묶기) → AI Agent(+ Chat Model)
 
 ---
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../../day3/wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. Ubuntu 창에서 `GENERIC_TIMEZONE=Asia/Seoul npx n8n` → Windows 브라우저에서 `http://localhost:5678`.
+
 ## ① 띄우기 (5분)
 
 ```bash

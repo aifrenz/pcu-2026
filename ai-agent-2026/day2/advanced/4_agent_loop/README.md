@@ -7,6 +7,8 @@
                      (Agent)                    (Workflow)
 ```
 
+> **Windows라면 WSL에서:** [WSL에서 시작하는 실습 환경](../../../day3/wsl_setup.md) 1~2단계(WSL 켜기 · 기본 도구)를 먼저 합니다. Ubuntu 창에서 `cd ~/pcu-2026/ai-agent-2026/day2/advanced/4_agent_loop && python3 agent_loop.py --no`.
+
 ## 실행
 
 Python 3.8 이상이면 됩니다. 설치할 패키지가 없습니다.
