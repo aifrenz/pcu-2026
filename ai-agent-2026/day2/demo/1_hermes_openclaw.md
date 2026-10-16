@@ -3,22 +3,23 @@
 강의에서는 강사가 **Hermes Agent를 화면에서 라이브로 설치**하고, 미리 깔아 둔 **OpenClaw**와 나란히 같은 일을 시켰습니다. 둘 중 하나만 따라 해도 됩니다.
 
 ```
-① 텔레그램 봇 만들기 → ② 설치 → ③ 모델 · 메신저 연결 → ④ 같은 메시지 6개 보내기 → ⑤ 비교 기록 → ⑥ 끝내기
+① 디스코드 봇 만들기 → ② 설치 → ③ 모델 · 메신저 연결 → ④ 같은 메시지 6개 보내기 → ⑤ 비교 기록 → ⑥ 끝내기
 ```
 
 **왜 Hermes를 라이브로 깔았나:** 갓 설치한 Hermes는 스킬이 하나도 없습니다. 일을 한 번 시키면 스킬 파일이 새로 생기는 장면을 처음부터 볼 수 있습니다.
 
 ---
 
-## ① 텔레그램 봇 만들기 (5분)
+## ① 메신저 봇 만들기 · 디스코드 (5분)
 
-1. 텔레그램에서 **@BotFather**를 찾아 대화를 시작합니다.
-2. `/newbot`을 보냅니다.
-3. 봇 이름을 정합니다. 예: `내 브리핑 비서`
-4. 봇 아이디를 정합니다. 반드시 `bot`으로 끝나야 합니다. 예: `my_briefing_demo_bot`
-5. BotFather가 알려 주는 **토큰**(숫자:영문 긴 문자열)을 메모장에 저장합니다. **비밀번호와 같습니다.**
+강의에서는 **디스코드**(무료)로 연결했습니다. 왓츠앱 · 라인으로 하고 싶다면 [메신저 연결 안내](../advanced/messengers.md)를 보세요.
 
-두 비서를 모두 해 볼 거라면 봇을 2개 만듭니다 (예: `..._hermes_bot`, `..._openclaw_bot`).
+1. [Discord Developer Portal](https://discord.com/developers/applications) → **New Application** → 이름 정하기 (예: `my-hermes-bot`)
+2. **Bot** 메뉴 → **Reset Token** → 나온 **토큰**을 메모장에 저장합니다. **비밀번호와 같습니다.** 같은 화면에서 **Message Content Intent**를 켭니다.
+3. **OAuth2 → URL Generator** → `bot`, `applications.commands` 체크 → 권한 View Channels · Send Messages · Read Message History → 생긴 주소로 **내 서버**에 초대 (서버가 없으면 디스코드 앱에서 '직접 만들기')
+4. 디스코드 **설정 → 고급 → 개발자 모드** 켜기 → 내 프로필 오른쪽 클릭 → **사용자 ID 복사**
+
+두 비서를 모두 해 볼 거라면 봇을 2개 만듭니다 (예: `my-hermes-bot`, `my-openclaw-bot`).
 
 ---
 
@@ -42,18 +43,20 @@
 
 ```bash
 hermes setup            # 설정 마법사: 모델 공급자와 키를 고릅니다
-hermes gateway setup    # 메신저 연결: Telegram을 고르고 ①의 토큰을 붙여 넣습니다
+hermes gateway setup    # 메신저 연결: Discord를 고르고 ①의 토큰 · 내 사용자 ID를 붙여 넣습니다
+hermes gateway          # 게이트웨이 켜기 (계속 켜 두려면 hermes gateway install → hermes gateway start)
 ```
 
 - **ChatGPT를 구독 중이면** `hermes model` → 'ChatGPT or Codex Subscription'을 고르고, 화면의 주소를 열어 코드를 입력하면 API 키 없이 연결됩니다(강의에서 쓴 방법). Claude Pro 구독으로는 연결할 수 없습니다. 자세한 것은 [서비스별로 지금 되는 것](../services.md#메신저-비서-openclaw와-hermes).
 - 모델만 다시 고르려면 `hermes model`을 씁니다.
 - API 키 대신 Nous Portal을 쓰려면 `hermes setup --portal`을 씁니다.
-- 설정 마지막에 나오는 안내대로 게이트웨이를 켜면 텔레그램 봇이 답하기 시작합니다.
+- 게이트웨이를 켜면 디스코드 봇이 답하기 시작합니다. 봇에게 **DM**으로 보내면 바로 답하고, 서버 채널에서는 `@봇이름`으로 불러야 답합니다.
 
 ### OpenClaw
 
 ```bash
-openclaw onboard --install-daemon   # 모델 · 채널(Telegram) 설정 + 백그라운드 실행 등록
+openclaw onboard --install-daemon   # 모델 · 채널(Discord) 설정 + 백그라운드 실행 등록
+openclaw channels add               # (나중에 채널을 추가할 때) 목록에서 Discord 선택 → 토큰 입력
 openclaw gateway status             # 돌고 있는지 확인
 openclaw doctor                     # 설정 문제 점검
 ```
@@ -63,14 +66,14 @@ openclaw doctor                     # 설정 문제 점검
 
 ### 공통
 
-- 설정 중 **허용할 사용자**를 물으면 **내 텔레그램 계정만** 넣습니다. 아무나 내 봇에 일을 시킬 수 없게 하는 설정입니다.
+- 설정 중 **허용할 사용자**를 물으면 **내 디스코드 사용자 ID만** 넣습니다. 아무나 내 봇에 일을 시킬 수 없게 하는 설정입니다. Hermes는 허용 사용자가 비어 있으면 아무에게도 답하지 않고, OpenClaw는 모르는 사람에게 짝 맞추기 코드를 보냅니다(내 것이면 `openclaw pairing approve discord <코드>`).
 - 키와 토큰을 붙여 넣을 때 화면 공유 중이라면 잠시 끕니다.
 
 ---
 
 ## ④ 두 비서에게 같은 메시지 6개 보내기 (15분)
 
-텔레그램 창 두 개를 나란히 띄우고, **아래 메시지를 순서대로, 두 봇에 똑같이** 보냅니다.
+디스코드에서 두 봇과의 DM 창을 나란히 띄우고(PC 앱이나 브라우저 discord.com), **아래 메시지를 순서대로, 두 봇에 똑같이** 보냅니다.
 
 ### 메시지 1 · 일 맡기기 (기억시키기)
 
@@ -143,7 +146,7 @@ ls -lt ~/.hermes/skills | head     # macOS · Linux: 최근에 생긴 파일이 
 | --- | --- |
 | 결과 품질 (1~5) | 메시지 2 |
 | 걸린 시간 | 메시지 2 |
-| 계획 · 도구 사용이 보였나 | 메시지 2 (텔레그램 화면 + 로그) |
+| 계획 · 도구 사용이 보였나 | 메시지 2 (디스코드 화면 + 로그) |
 | 다시 물었을 때 기억했나 | 메시지 4 |
 | 내가 줘야 하는 권한 | ③ 설정 화면, 메시지 6 |
 | 설치 · 운영 부담 | ②~③ 전체 |
@@ -162,7 +165,7 @@ ls -lt ~/.hermes/skills | head     # macOS · Linux: 최근에 생긴 파일이 
 
 ## ⑥ 끝내기 (꼭)
 
-1. **봇 토큰 폐기:** @BotFather에 `/revoke`(토큰 재발급) 또는 `/deletebot`(봇 삭제)
+1. **봇 토큰 폐기:** Discord Developer Portal → 내 앱 → **Bot → Reset Token**(기존 토큰 무효화) 또는 앱 삭제
 2. **API 키 폐기 또는 한도 낮추기:** 모델 공급자 콘솔에서
 3. **비서 끄기:** 계속 쓰지 않으면 게이트웨이를 끄고 앱을 지웁니다. OpenClaw는 `--install-daemon`으로 백그라운드 실행을 등록했으므로, [제거 안내](https://docs.openclaw.ai/install)에 따라 함께 지웁니다.
 
@@ -170,7 +173,7 @@ ls -lt ~/.hermes/skills | head     # macOS · Linux: 최근에 생긴 파일이 
 
 | 이럴 때 | 이렇게 |
 | --- | --- |
-| 봇이 답하지 않는다 | 게이트웨이가 켜져 있는지 확인 (`openclaw gateway status`), 토큰을 다시 붙여 넣기 |
+| 봇이 답하지 않는다 | 게이트웨이가 켜져 있는지 확인 (`openclaw gateway status`, `hermes gateway status`), **Message Content Intent**가 켜져 있는지, 허용 사용자에 내 ID가 있는지 확인 |
 | 남이 내 봇에 말을 걸 수 있을까 걱정된다 | 허용 사용자 설정에 내 계정만 있는지 확인. 봇 아이디를 공유하지 않기 |
 | 비용이 걱정된다 | 지출 상한을 낮게(예: 5달러) 걸고, 실습이 끝나면 키를 폐기 |
 | 설치 명령이 실패한다 | 공식 문서의 설치 페이지를 기준으로 다시. 데스크톱 앱으로 바꿔도 됨 |

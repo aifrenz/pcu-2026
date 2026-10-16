@@ -8,7 +8,7 @@ DAY 2 · 3 심화 시연(Hermes · OpenClaw · n8n · MCP · 에이전트 루프
 | **깨끗한 기본판(base.tar)** 을 저장해 두고 복제해서 사용 | WSL에는 스냅숏이 없음. 대신 export · import로 '설치 전 상태'를 언제든 다시 만듦 |
 | 수업이 끝나면 **USB로 내보내고 PC에서는 지움** | 공용 PC에 봇 토큰 · API 키 · 로그인이 남지 않게. 내일은 USB에서 다시 불러옴 |
 
-**도착 시각: 수업 1시간 전 (17:30 이전)** · 준비물: USB 메모리(8GB 이상), 휴대폰(텔레그램 · 핫스팟), 맥북 + 충전기 · USB-C → HDMI 어댑터(백업)
+**도착 시각: 수업 1시간 전 (17:30 이전)** · 준비물: USB 메모리(8GB 이상), 휴대폰(디스코드 앱 · 핫스팟), 맥북 + 충전기 · USB-C → HDMI 어댑터(백업)
 
 ---
 
@@ -18,7 +18,7 @@ DAY 2 · 3 심화 시연(Hermes · OpenClaw · n8n · MCP · 에이전트 루프
 
 - [ ] **관리자 권한:** 시작 메뉴 → PowerShell 오른쪽 클릭 → '관리자로 실행' → `wsl --status`가 오류 없이 나온다
 - [ ] **복원 프로그램:** 재부팅하면 초기화되는 프로그램이 있는지 센터 담당자에게 확인 (있으면 설치 후 재부팅에서 사라짐)
-- [ ] **학교 망:** 브라우저에서 `web.telegram.org`가 열린다. 막혀 있으면 휴대폰 핫스팟으로 연결
+- [ ] **학교 망:** 브라우저에서 `discord.com/app`이 열린다. 막혀 있으면 휴대폰 핫스팟으로 연결
 - [ ] **화면:** 프로젝터에 PC 화면이 나온다
 
 ## 1. 기본 Ubuntu 만들기 (20분)
@@ -92,13 +92,13 @@ copy C:\wsl\base.tar E:\     # E: = 내 USB. 내일 DAY 3 복제본을 빨리 �
 
 ```bash
 curl -fsSL https://openclaw.ai/install.sh | bash
-openclaw onboard --install-daemon   # 모델 · 텔레그램 설정 + 백그라운드 실행 등록
+openclaw onboard --install-daemon   # 모델 · 디스코드 설정 + 백그라운드 실행 등록
 openclaw gateway status             # 돌고 있는지 확인
 openclaw doctor                     # 문제 점검
 ```
 
-- [ ] 텔레그램 @BotFather에서 OpenClaw용 봇 토큰 발급 · 등록
-- [ ] 휴대폰에서 봇에게 메시지 한 통 → 답이 온다
+- [ ] Discord Developer Portal에서 OpenClaw용 봇 만들기 · 토큰 등록 ([메신저 연결](../day2/advanced/messengers.md#디스코드-추천)) · 내 서버에 초대
+- [ ] 디스코드에서 봇에게 DM 한 통 → 답이 온다 (모르는 사용자로 나오면 `openclaw pairing approve discord <코드>`)
 - [ ] [시연 메시지 6개](../day2/demo/1_hermes_openclaw.md) 중 앞의 1~2개를 미리 보내 둔다 (DAY 3 '기억' 확인용 대화가 남도록)
 
 ### Hermes (리허설 후 되돌리기)
@@ -106,12 +106,13 @@ openclaw doctor                     # 문제 점검
 ```bash
 curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
 hermes model            # 'ChatGPT or Codex Subscription' → 주소를 시크릿 창에서 열고 코드 입력 (API 키 없이)
-hermes gateway setup    # 텔레그램 (OpenClaw와 다른 봇 토큰)
+hermes gateway setup    # Discord (OpenClaw와 다른 봇 토큰 · 내 사용자 ID)
+hermes gateway          # 게이트웨이 켜기 (이 탭을 열어 두는 동안 동작)
 hermes doctor
 ```
 
-- [ ] 설정 마지막에 나오는 **게이트웨이 켜는 명령**을 메모 (공식 문서에서 확인하지 못한 부분)
-- [ ] 텔레그램에서 답이 오는 것까지 확인
+- [ ] 게이트웨이 명령: 앞에서 켜기 `hermes gateway`, 서비스로 `hermes gateway install` → `start` / `status` / `stop`
+- [ ] 디스코드 DM에서 답이 오는 것까지 확인
 - [ ] 걸린 시간 메모 (수업에서 이 시간만큼 기다림)
 
 리허설이 끝나면 설치 전 상태로 되돌립니다. PowerShell:
@@ -159,10 +160,10 @@ python3 agent_loop.py --no
 
 ## 4. 수업 직전 (5분)
 
-- [ ] Windows **방해 금지** · 알림 끄기 (텔레그램 · 메일 알림에 토큰이나 개인 메시지가 뜨지 않게)
+- [ ] Windows **방해 금지** · 알림 끄기 (디스코드 · 메일 알림에 토큰이나 개인 메시지가 뜨지 않게)
 - [ ] 터미널 글꼴 크게 (Windows Terminal: Ctrl + `+`)
 - [ ] **`wsl -d openclaw` 탭을 하나 열어 두기** — WSL은 열린 터미널이 없으면 잠시 뒤 Linux를 꺼서 봇도 멈춥니다
-- [ ] 휴대폰 텔레그램 또는 브라우저 시크릿 창의 텔레그램 웹 준비
+- [ ] 브라우저 시크릿 창의 디스코드(discord.com/app)에 두 봇과의 DM 창을 나란히 준비
 
 ---
 
@@ -184,7 +185,7 @@ wsl -l -v                                 # 아무것도 없으면 OK
 
 - [ ] `E:\openclaw.tar`, `E:\hermes-live.tar`, `E:\base.tar`가 USB에 있다
 - [ ] 강의 PC에 복제본이 하나도 없다
-- [ ] 브라우저에서 텔레그램 웹 · Claude 로그아웃, 시크릿 창 닫기
+- [ ] 브라우저에서 디스코드 · Claude 로그아웃, 시크릿 창 닫기
 - [ ] (WSL을 처음 설치했다면) 센터 담당자에게 WSL 기능을 남겨 두어도 되는지 확인
 
 ## 6. 내일 DAY 3 시작 전 (15분)
@@ -196,11 +197,12 @@ wsl --import hermes-live C:\wsl\hermes-live E:\hermes-live.tar
 wsl --import cc-live     C:\wsl\cc-live     E:\base.tar      # Claude Code 라이브 설치용 깨끗한 복제본
 ```
 
-- [ ] `wsl -d openclaw` → `openclaw gateway status` (꺼져 있으면 게이트웨이 켜기) → 텔레그램 답 확인
-- [ ] `wsl -d hermes-live` → 어제 메모한 명령으로 Hermes 게이트웨이 켜기 → 텔레그램 답 확인. 두 터미널 탭은 오프닝이 끝날 때까지 열어 둠
+- [ ] `wsl -d openclaw` → `openclaw gateway status` (꺼져 있으면 게이트웨이 켜기) → 디스코드 답 확인
+- [ ] `wsl -d hermes-live` → `hermes gateway` → 디스코드 답 확인. 두 터미널 탭은 오프닝이 끝날 때까지 열어 둠
 - [ ] 오프닝: 두 봇에게 "어제 무엇을 부탁받았지?" → 비교 기록표 '기억' 칸 확인
 - [ ] Claude Code 라이브 설치는 `wsl -d cc-live`에서 ([장면 3](../day3/demo/claude_code_meeting_todo.md)). 로그인은 시크릿 창에서
-- [ ] 수업 뒤 5번과 같은 방법으로 정리하고, **봇 토큰 두 개와 API 키를 폐기**
+- [ ] 어제 텔레그램으로 연결했다면 오프닝 전에 디스코드 채널을 추가합니다 (Hermes `hermes gateway setup`, OpenClaw `openclaw channels add`). 메모리 · 스킬 파일은 채널과 상관없이 남아 있으니 '기억' 확인은 그대로 됩니다. 다만 대화 기록은 채널별이라, 질문은 "어제 내가 맡긴 일이 뭐였지?"처럼 메모리를 묻는 말로 합니다.
+- [ ] 수업 뒤 5번과 같은 방법으로 정리하고, **봇 토큰 두 개(Developer Portal → Reset Token)와 API 키를 폐기**
 
 ---
 
@@ -224,6 +226,6 @@ multipass shell openclaw          # 이후 3번의 Ubuntu 명령과 같음
 
 | 항목 | 왜 |
 | --- | --- |
-| Hermes 게이트웨이를 켜는 명령 | 공식 문서에서 확인하지 못함. 설정 마지막 안내를 메모 |
+| Hermes 게이트웨이를 켜는 명령 | `hermes gateway`(앞에서) 또는 `hermes gateway install` → `start` (공식 메시징 문서에서 확인) |
 | OpenClaw 백그라운드 실행이 WSL에서 유지되는지 | systemd 설정과 '열린 터미널' 조건의 영향을 받을 수 있음 |
-| import한 복제본에서 텔레그램 봇이 바로 답하는지 | 내일 오프닝이 이것에 달려 있음. 오늘 정리 전에 한 번 export → import 해 보면 가장 확실 |
+| import한 복제본에서 디스코드 봇이 바로 답하는지 | 내일 오프닝이 이것에 달려 있음. 오늘 정리 전에 한 번 export → import 해 보면 가장 확실 |

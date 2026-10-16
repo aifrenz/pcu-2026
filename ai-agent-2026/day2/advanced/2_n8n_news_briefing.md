@@ -82,7 +82,7 @@ return [{ json: { newsText: lines.join('\n'), count: items.length } }];
 ## 5. 전달 — 어디로
 
 - 처음에는 **AI Agent 노드의 출력(output)을 화면에서 확인하는 것으로 충분**합니다. 여기까지가 완주입니다.
-- 메신저로 보내 보고 싶다면 **Telegram** 노드(봇 토큰과 내 chat ID 필요)를, 메일이라면 **Gmail/Send Email** 노드를 붙이고 본문에 `{{ $json.output }}`을 넣습니다.
+- 메신저로 보내 보고 싶다면 **Discord** 노드(봇 토큰과 채널 ID, 또는 채널의 Webhook 주소 — 모두 무료)를, 메일이라면 **Gmail/Send Email** 노드를 붙이고 본문에 `{{ $json.output }}`을 넣습니다.
 - 남에게 보내기 전에 사람이 확인하려면, 전달 노드 대신 나에게만 보내거나 승인(Wait/Send and Wait) 단계를 넣습니다.
 
 ## 6. 관찰하기

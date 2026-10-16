@@ -10,7 +10,7 @@
 
 ```mermaid
 flowchart LR
-  P[내 휴대폰<br/>텔레그램] -- 메시지 --> G["게이트웨이<br/>(내 컴퓨터 · 서버에서 계속 돎)"]
+  P[내 휴대폰 · PC<br/>디스코드 · 왓츠앱] -- 메시지 --> G["게이트웨이<br/>(내 컴퓨터 · 서버에서 계속 돎)"]
   G --> A["에이전트 루프<br/>계획 → 도구 → 관찰"]
   A <--> M["모델<br/>(API 키 · 구독)"]
   A <--> T["도구<br/>웹 검색 · 파일 · 명령 실행 · 브라우저"]
@@ -22,7 +22,7 @@ flowchart LR
 | 부품 | 하는 일 | 범용 AI(Claude · ChatGPT)와 비교 |
 | --- | --- | --- |
 | 게이트웨이 | 메신저와 에이전트를 잇고, **계속 켜져 있으면서** 메시지를 기다림 | 범용 AI는 내가 창을 열어야 시작 |
-| 채널 | 텔레그램 · 디스코드 · 슬랙 · 왓츠앱 등 말을 거는 통로 | 범용 AI는 그 회사 앱 · 웹 |
+| 채널 | 디스코드 · 왓츠앱 · 라인 · 슬랙 등 말을 거는 통로 ([무료로 연결하기](messengers.md)) | 범용 AI는 그 회사 앱 · 웹 |
 | 모델 | 판단하는 두뇌. **내가 고르고 바꿀 수 있음** | 범용 AI는 그 회사 모델 |
 | 도구 | 웹 검색, 파일, 명령 실행, 브라우저 등 | 범용 AI는 회사가 허용한 도구 · 커넥터 |
 | 스킬 | '이런 일은 이렇게 한다'를 적은 파일. 설치하거나 스스로 만듦 | 범용 AI의 프로젝트 지시문 · Skills와 비슷 |
@@ -58,7 +58,7 @@ flowchart LR
 
 OpenClaw·Hermes는 명령을 실행하고 파일을 읽고 쓸 수 있는 에이전트입니다. Docker 없이 깔면 내 노트북 전체에 닿을 수 있으니 세 가지를 지킵니다.
 
-1. **개인 메일·드라이브·회사 계정을 연결하지 않습니다.** 텔레그램 봇과 모델 키만 씁니다.
+1. **개인 메일·드라이브·회사 계정을 연결하지 않습니다.** 메신저 봇(디스코드 등)과 모델 키만 씁니다.
 2. **명령 실행·파일 쓰기는 '승인 후 실행'** 으로 둡니다. 지시문에 "묻고 해"라고 적는 것은 권한 통제가 아닙니다. 설정으로 승인 모드를 켤 수 없다면 내 노트북에 깔지 말고 별도 컴퓨터·가상 머신·Docker에서 씁니다.
 3. **끝나면 정리합니다.** 봇 토큰과 API 키를 폐기하고, 계속 쓰지 않으면 앱을 지웁니다.
 
@@ -68,13 +68,13 @@ OpenClaw·Hermes는 명령을 실행하고 파일을 읽고 쓸 수 있는 에�
 | --- | --- | --- |
 | 첫 설정 | 설치 뒤 나오는 안내(onboard)를 따라 모델·메신저 연결 | 설치 뒤 `hermes setup` |
 | 모델 연결 | 개인 API 키, 또는 ChatGPT 구독 로그인 ([공식 문서](https://docs.openclaw.ai/providers/openai)) | 개인 API 키, **ChatGPT 구독 로그인**(`hermes model`에서 OpenAI Codex), GitHub Copilot, Nous Portal(`hermes setup --portal`), 내 컴퓨터의 Ollama 등 ([공식 문서](https://hermes-agent.nousresearch.com/docs/integrations/providers)) |
-| 메신저 | 텔레그램 @BotFather에서 봇 토큰 발급 후 등록 | `hermes gateway setup`으로 텔레그램 등록 후, 설정 마지막 안내대로 게이트웨이 켜기 |
+| 메신저 | `openclaw channels add` → Discord · WhatsApp 등 선택 ([메신저 연결](messengers.md)) | `hermes gateway setup` → Discord · WhatsApp 등 선택 → `hermes gateway`로 켜기 |
 | 확인 | 내 봇에 시나리오 카드의 일을 말로 시켜 보기 | 일을 끝낸 뒤 새 스킬 파일이 생겼는지 확인 |
 
 - **이미 ChatGPT를 구독 중이면** 두 도구 모두 그 구독으로 로그인해 별도 사용료 없이 써 볼 수 있습니다. 어느 플랜까지 되는지, 구독 한도에서 어떻게 차감되는지는 공식 문서에 나와 있지 않으니 처음에는 짧게 써 보고 확인합니다.
 - **Claude 구독:** Pro로는 연결할 수 없습니다. Hermes 문서에 따르면 Max는 '추가 사용량(extra usage)'을 따로 구매한 경우에만 로그인 연결이 되고, 그 사용량은 별도로 과금됩니다. 그 밖에는 API 키로 연결합니다.
 - **완전 무료로 하려면:** 내 컴퓨터에서 Ollama로 오픈 모델을 돌려 연결합니다. 다만 도구를 잘 쓰는 모델은 메모리가 넉넉한 컴퓨터가 필요합니다. Gemini 무료 API 키는 Hermes 문서에서도 "에이전트 대화 몇 번 만에 소진될 수 있다"고 안내합니다.
-- 텔레그램 봇 토큰도 비밀번호입니다. 화면 공유 중에 띄우지 않습니다.
+- 디스코드 봇 토큰 · 왓츠앱 세션 파일도 비밀번호입니다. 화면 공유 중에 띄우지 않습니다.
 
 ## 자주 쓰는 운영 명령
 
@@ -84,7 +84,7 @@ OpenClaw·Hermes는 명령을 실행하고 파일을 읽고 쓸 수 있는 에�
 | --- | --- | --- |
 | 버전 · 설치 확인 | `openclaw --version` | `hermes doctor` |
 | 설정 점검 | `openclaw doctor` | `hermes config check` |
-| 게이트웨이가 도는지 | `openclaw gateway status` | — |
+| 게이트웨이가 도는지 | `openclaw gateway status` | `hermes gateway status` |
 | 모델 바꾸기 | 처음 설정(`openclaw onboard`)에서 | `hermes model` |
 | 쓸 도구 고르기 | — | `hermes tools` |
 | 메신저 연결 | 처음 설정에서 채널 선택 | `hermes gateway setup` |

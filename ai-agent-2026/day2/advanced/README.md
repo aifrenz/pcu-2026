@@ -17,9 +17,9 @@
 
 | 심화 | 내용 | 필요한 것 | 시간 | 파일 |
 | --- | --- | --- | --- | --- |
-| 1 | 메신저 비서 구조 · OpenClaw와 Hermes 차이 · 설치 · 운영 명령 · 응용 레시피 5개 | 데스크톱 앱 또는 설치 명령, 텔레그램, 모델 API 키(또는 ChatGPT 구독 · Nous Portal) | 60분 | [`1_openclaw_hermes.md`](1_openclaw_hermes.md) |
+| 1 | 메신저 비서 구조 · OpenClaw와 Hermes 차이 · 설치 · 운영 명령 · 응용 레시피 5개 | 데스크톱 앱 또는 설치 명령, 디스코드 · 왓츠앱 중 하나([메신저 연결](messengers.md)), 모델 API 키(또는 ChatGPT 구독 · Nous Portal) | 60분 | [`1_openclaw_hermes.md`](1_openclaw_hermes.md) |
 | 2 | n8n '주간 AI 뉴스 브리핑' (시간 트리거) | Node.js + `npx n8n` (또는 n8n Cloud 체험), 모델 API 키 | 40분 | [`2_n8n_news_briefing.md`](2_n8n_news_briefing.md) |
-| 2+ | n8n 워크플로 3개 더: 폼 회의록 정리기(사건 트리거) · 메일 분류 + 사람 승인 · 도구를 가진 채팅 비서 · 운영 장치 | 위와 같음 (+ 승인용 텔레그램) | 90분 | [`2b_n8n_more_workflows.md`](2b_n8n_more_workflows.md) |
+| 2+ | n8n 워크플로 3개 더: 폼 회의록 정리기(사건 트리거) · 메일 분류 + 사람 승인 · 도구를 가진 채팅 비서 · 운영 장치 | 위와 같음 (+ 승인용 디스코드) | 90분 | [`2b_n8n_more_workflows.md`](2b_n8n_more_workflows.md) |
 | 3 | MCP: 실습 폴더 서버 꽂기 → Claude Code에도 → **내가 만든 MCP 서버** → n8n과 MCP | Claude Desktop, Node.js, (C) Python 3.10+ | 60분 | [`3_mcp.md`](3_mcp.md), [`3_mcp_server/`](3_mcp_server/) |
 | 4 | **미니 에이전트 루프** — 계획 · 도구 · 관찰 · 승인 · 멈춤 장치를 코드로 (API 키 없이 실행) | Python 3.8+ | 20분 | [`4_agent_loop/`](4_agent_loop/) |
 
